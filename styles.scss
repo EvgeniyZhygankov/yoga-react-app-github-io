@@ -1,5 +1,5 @@
 
-@mixin btn($radiusSize) {
+@mixin btn($radiusSize, $backColor) {
     text-decoration: none;
     display: inline-flex;
     justify-content: center;
@@ -11,7 +11,7 @@
     
     &:hover {
         cursor: default;
-        border: 1px solid blue;
+        background-color: $backColor;
     }
 }
 
@@ -182,12 +182,13 @@ header {
     padding: 0 0 41px 41px;
     
     a {
-        @include btn(31px);
+        @include btn(31px, $clPink);
         height: 62px;
         width: 330px;
         background-color: $clGreen;
         color: white !important;
         font-size: 0.75rem;
+        box-shadow: $boxShadow;
     }
 }
 
@@ -342,7 +343,8 @@ header {
     padding-bottom: 10%;
 
     a {
-        @include btn(30px); 
+        background-color: rgba($color: white, $alpha: 0.3);
+        @include btn(30px, rgba(white, 0.7)); 
     }
     p {
         margin: 0;
@@ -438,8 +440,285 @@ header {
     }
 
     .btn {
-        @include btn(30px);
+        @include btn(30px, $clGreen);
         background-color: $clPink;
         font-size: 0.85rem;
     }   
+}
+
+.directions-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.directions-content {
+    width: 92%;
+}
+
+.directions-container {
+    width: 1244px;
+    height: 1112px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: space-between;
+}
+
+.direction {
+    width: 395px;
+    height: 538px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // background: url(./images/direct-back1.png);
+    // background-size: 100% 100%;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+}
+
+.direction-content {
+    width: 88.86%;
+    height: 88.29%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    z-index: 0;
+
+    h5 {
+        font-size: 1.5rem;
+        font-weight: bold;
+        width: 50%;
+        margin-bottom: 20px;
+    }
+    
+    p {
+        font-size: 0.8rem;
+        font-weight: normal;
+        width: 59%;
+        line-height: 17px;
+    }   
+
+    a {
+        @include btn(31px, $clPink);
+        height: 62px;
+        width: 240px;
+        background-color: $clGreen;
+        font-weight: bold;
+        font-size: 0.85rem;
+        box-shadow: $boxShadow;
+        border: 1px solid white;
+    }
+}
+
+.block-name {
+    width: 100%;
+    color: $clDarkGrey;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 30px 0;
+    &::before {
+        content: "_______"; 
+        font-weight: normal;   
+        margin-right: 27px;
+    }
+}
+
+.cols3-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.cols3-content {
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    p {
+        width: 30%;
+        line-height: 22px;
+    }
+}
+
+.black-bold-italic {
+
+    color: $clDarkGrey;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.benefits-block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    > P {
+        width: auto;
+    }
+}
+
+@mixin gradient($color) {
+    background: linear-gradient(rgba(white, 0), $color 30);
+}
+
+.benefits-content {
+    width: 92%;
+    display: flex;
+    justify-content: space-between;
+    > img {
+        z-index: 0;
+        width: 100%;
+        position: absolute;
+        left: 0;
+    }
+
+    .benefit:nth-child(2) {
+        @include gradient(#d4f2f3);
+    }
+
+    .benefit:nth-child(3) {
+        @include gradient(#ede1fb);
+    }
+
+    .benefit:nth-child(4) {
+        @include gradient(#fed4e9);
+    }
+
+    .benefit:nth-child(5) {
+        @include gradient(#e2f6d3);
+    }
+
+    .benefit:nth-child(6) {
+        @include gradient(#f8dfd5);
+    }
+}
+
+.benefit {
+
+    max-width: 298px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom-left-radius: 18px;
+    border-bottom-right-radius: 18px;
+    font-size: 0.8rem;
+    p {
+        width: 79.865%;
+        text-align: center;
+        line-height: 22px;
+        margin-top: -40px;
+
+        span {
+            width: 63.087%;
+        }
+    }
+}
+
+.big-form-block {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+    flex: 0 1 541px;
+    color: white;
+}
+
+.big-form-container {
+    width: 92%;
+    background: url(./images/big-form-back.png), $clGreen;
+    background-size: 100% 100%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $boxShadow;
+}
+
+.big-form-content {
+    width: 83.6%;
+    height: 65.25%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    // justify-content: space-between;
+    align-content: space-between;
+    align-items: center;
+
+    .media {
+        align-self: flex-end;
+        margin: 0;
+    }
+    
+    > p {
+        width: 100%;
+        color: white;
+        margin: 0;
+        margin-left: 16px;
+    }
+
+    form {
+        flex: 0 1 1007px;
+        height: 71%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-content: space-between;
+        margin-left: 130px;
+    }   
+
+    input[type="submit"] {
+        @include btn(30px, $clGreen);
+        background: $clPink;
+    }
+
+    input {
+        height: 60px;
+        width: 328px;
+        border-radius: 30px;
+        padding: 0 20px;
+    }
+
+    input[type="checkbox"] {
+        height: auto;
+        width: auto;
+    }
+
+    textarea {
+        width: 668px;
+        height: 172px;
+        border-radius: 30px;
+        padding: 20px 20px;
+        resize: none;
+    }
+
+    input::placeholder, textarea::placeholder {
+        color: $clDarkGrey;
+        font-weight: bold;
+    }
+
+    form div {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        p {
+            width: 270px;
+            height: auto;
+            font-size: 11px;
+            line-height: 12px;
+            // margin: 0;
+        }
+    }
 }
