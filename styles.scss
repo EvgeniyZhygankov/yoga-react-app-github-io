@@ -951,6 +951,7 @@ header {
 
 #map {
     width: 68%;
+    min-width: 600px;
     overflow: hidden;
 }
 
@@ -1376,8 +1377,7 @@ footer {
     }
 
     section {
-        padding-top: 100px;
-        // position: relative;
+        padding-top: 50px;
     }
 
     #carouselExampleCaptions {
@@ -1477,5 +1477,42 @@ footer {
     .info {
         width: 311px;
         flex: 0 0 auto;
+    }
+
+    .benefits-content {
+
+        > img {
+            display: none;
+        }
+    }
+
+    .big-form-container {
+        height: auto;
+        justify-content: center;
+    }
+
+    .big-form-content-bottom {
+        height: 650px;
+
+        form {
+            flex-direction: column;
+            flex-wrap: nowrap;
+
+            input, textarea, div {
+                width: 100%;
+            }
+
+            textarea {
+                height: 300px;
+            }
+        }
+
+        .media {
+            align-self: center;
+        }
+    }
+
+    .map-content {
+        overflow: auto;
     }
 }

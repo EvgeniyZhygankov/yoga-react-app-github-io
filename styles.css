@@ -1357,6 +1357,7 @@ header {
 
 #map {
   width: 68%;
+  min-width: 600px;
   overflow: hidden;
 }
 
@@ -1823,7 +1824,7 @@ footer {
     background: white;
   }
   section {
-    padding-top: 100px;
+    padding-top: 50px;
   }
   #carouselExampleCaptions {
     display: none;
@@ -1930,6 +1931,40 @@ footer {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
+  }
+  .benefits-content > img {
+    display: none;
+  }
+  .big-form-container {
+    height: auto;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .big-form-content-bottom {
+    height: 650px;
+  }
+  .big-form-content-bottom form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .big-form-content-bottom form input, .big-form-content-bottom form textarea, .big-form-content-bottom form div {
+    width: 100%;
+  }
+  .big-form-content-bottom form textarea {
+    height: 300px;
+  }
+  .big-form-content-bottom .media {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+  }
+  .map-content {
+    overflow: auto;
   }
 }
 /*# sourceMappingURL=styles.css.map */
