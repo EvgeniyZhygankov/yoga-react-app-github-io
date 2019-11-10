@@ -1473,7 +1473,6 @@ footer {
 }
 
 .ORMatrix {
-  width: 431px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1830,13 +1829,13 @@ footer {
     display: none;
   }
   header {
-    width: 98%;
+    width: 100%;
     min-height: 50px;
-    position: relative;
-    z-index: 1;
     position: fixed;
+    z-index: 20;
     top: 0px;
     background: white;
+    padding: 0 20px;
   }
   .header-left {
     width: 100%;
@@ -1857,6 +1856,7 @@ footer {
     top: -100vh;
     -webkit-transition: top 1s;
     transition: top 1s;
+    z-index: 20;
   }
   .header-left-top .nav-bar ul {
     display: -webkit-box;
@@ -1876,7 +1876,7 @@ footer {
   }
   .logo {
     width: 150px;
-    height: 50px;
+    height: 60px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1889,8 +1889,8 @@ footer {
   }
   .header-left-bottom {
     position: absolute;
-    top: 25px;
-    right: 40px;
+    top: 30px;
+    right: 50px;
   }
   .header-left-bottom .media {
     width: 92px;
@@ -1916,6 +1916,7 @@ footer {
     width: auto;
     -ms-flex-item-align: end;
         align-self: flex-end;
+    font-size: 1rem;
   }
   .directions-content {
     -webkit-box-orient: vertical;
@@ -1954,9 +1955,22 @@ footer {
   }
   .big-form-content-bottom form input, .big-form-content-bottom form textarea, .big-form-content-bottom form div {
     width: 100%;
+    font-size: 0.5rem;
   }
   .big-form-content-bottom form textarea {
     height: 300px;
+  }
+  .big-form-content-bottom form input::-webkit-input-placeholder, .big-form-content-bottom form textarea::-webkit-input-placeholder {
+    font-size: 0.5rem;
+  }
+  .big-form-content-bottom form input:-ms-input-placeholder, .big-form-content-bottom form textarea:-ms-input-placeholder {
+    font-size: 0.5rem;
+  }
+  .big-form-content-bottom form input::-ms-input-placeholder, .big-form-content-bottom form textarea::-ms-input-placeholder {
+    font-size: 0.5rem;
+  }
+  .big-form-content-bottom form input::placeholder, .big-form-content-bottom form textarea::placeholder {
+    font-size: 0.5rem;
   }
   .big-form-content-bottom .media {
     -ms-flex-item-align: center;
@@ -1965,6 +1979,22 @@ footer {
   }
   .map-content {
     overflow: auto;
+  }
+  .polina > img {
+    width: 100%;
+  }
+  footer .nav-bar {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  #carouselPhotogallery {
+    width: 100%;
+  }
+  #carouselPhotogallery .photos > img {
+    width: 100%;
+    height: 100%;
   }
 }
 /*# sourceMappingURL=styles.css.map */
