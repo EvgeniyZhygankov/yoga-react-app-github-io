@@ -1544,6 +1544,7 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  color: white;
 }
 
 .upBtn a p {
@@ -1568,7 +1569,6 @@ footer {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: white;
   font-size: 2rem;
   -webkit-box-shadow: 0 8px 9px 0px rgba(0, 0, 0, 0.21);
           box-shadow: 0 8px 9px 0px rgba(0, 0, 0, 0.21);
@@ -2072,7 +2072,7 @@ footer {
     overflow: auto;
   }
   #map {
-    width: 90%;
+    width: 80%;
     -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;

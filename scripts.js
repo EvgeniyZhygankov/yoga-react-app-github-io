@@ -64,43 +64,6 @@ ul.addEventListener("transitionend", () => {
 
 
 
-/* работающий код скрытия меню */
-
-// icon.addEventListener("click", () => {
-
-//     if (navBar.style.width == "0px") {
-
-//         navBar.style.width = "739px";
-
-//         ul.style.display = "flex";
-//         ul.style.opacity = "0";
-
-//         window.setTimeout(() => {
-
-//             ul.style.opacity = "1";
-
-//         }, 1500);
-//     } 
-//     else {
-
-//         navBar.style.width = "0px";
-//         ul.style.opacity = "0";
-//     }
-// });
-
-// ul.addEventListener("transitionend", () => {
-
-//     if (getComputedStyle(ul).opacity == "0") {
-
-//         ul.style.display = "none";
-//     }
-// });
-
-/* работающий код скрытия меню */
-
-
-
-
 var map;
 
 const marksArr = [
@@ -155,10 +118,54 @@ window.onload = () => {
 
 
 
-const benefits = document.querySelector(".benefits-content");
-
 window.addEventListener("scroll", () => {
 
-    if (pageYOffset == 200) {
+    if (pageYOffset <= 0) {
+
+        clearInterval(IntervalId);
     }
 });
+
+
+var IntervalId;
+
+document.querySelector(".upBtn").addEventListener("click", () => { 
+
+    IntervalId = setInterval(() => {
+        window.scrollBy(0, -150);
+    }, 20);
+});
+
+/* работающий код скрытия меню */
+
+// icon.addEventListener("click", () => {
+
+//     if (navBar.style.width == "0px") {
+
+//         navBar.style.width = "739px";
+
+//         ul.style.display = "flex";
+//         ul.style.opacity = "0";
+
+//         window.setTimeout(() => {
+
+//             ul.style.opacity = "1";
+
+//         }, 1500);
+//     } 
+//     else {
+
+//         navBar.style.width = "0px";
+//         ul.style.opacity = "0";
+//     }
+// });
+
+// ul.addEventListener("transitionend", () => {
+
+//     if (getComputedStyle(ul).opacity == "0") {
+
+//         ul.style.display = "none";
+//     }
+// });
+
+/* работающий код скрытия меню */

@@ -1098,6 +1098,7 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    color: white;
 
     a p {
         transform: rotate(-90deg);
@@ -1114,7 +1115,6 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
-        color: white;
         font-size: 2rem;
         box-shadow: $boxShadow;
     }
@@ -1614,7 +1614,7 @@ footer {
     }
 
     #map {
-        width: 90%;
+        width: 80%;
         flex: 0 0 auto;
     }
     
