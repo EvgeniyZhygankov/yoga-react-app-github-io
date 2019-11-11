@@ -459,6 +459,32 @@ header {
     }   
 }
 
+.youtube {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: black;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+        text-decoration: none;
+        color: black;
+    }
+
+    p {
+        width: 75px;
+        font-style: italic;
+        font-size: 0.6rem;
+        margin: 0 0 0 5px;
+    }
+
+    i {
+        font-size: 2rem;
+        color: red;
+        margin: 0 5px 0 0;
+    }
+}
+
 .block {
     width: 100%;
     display: flex;
@@ -553,6 +579,7 @@ header {
     align-items: center;
     position: relative;
     box-shadow: $boxShadow;
+    border-radius: 20px;
 
     img {
         position: absolute;
@@ -560,6 +587,7 @@ header {
         bottom: 0;
         left: 0;
         right: 0;
+        border-radius: 20px;
     }
 }
 
@@ -705,6 +733,18 @@ header {
     color: white;
 }
 
+.big-form-content {
+    width: 92%;
+    height: 541px;
+    background: url(./images/bigFormBack.jpg);
+    background-size: 100% 100%;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: $boxShadow;
+}
+
 .big-form-container {
     // width: 72.6%;
     width: 1140px;
@@ -726,18 +766,6 @@ header {
         margin: 0;
         margin-left: 16px;
     }    
-}
-
-.big-form-content {
-    width: 92%;
-    height: 541px;
-    background: url(./images/big-form-back.png), $clGreen;
-    background-size: 100% 100%;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: $boxShadow;
 }
 
 .big-form-content-bottom {
@@ -826,12 +854,12 @@ header {
 
 .photos {
     width: 494px;
-    height: 349px;
+    height: 348px;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    border-radius: 30px;
+    border-radius: 20px;
     box-shadow: $boxShadow;
 
     > img {
@@ -946,7 +974,6 @@ header {
 
 #map {
     width: 68%;
-    min-width: 600px;
     overflow: hidden;
 }
 
@@ -1405,6 +1432,7 @@ footer {
             // width: 150px;
             // height: 250px;
             width: 30vw;
+            min-width: 160px;
             height: 70vh;
             position: absolute;
             top: -100vh;
@@ -1514,10 +1542,6 @@ footer {
         }
     }
 
-    .map-content {
-        overflow: auto;
-    }
-
     .polina {
 
         > img {
@@ -1525,6 +1549,15 @@ footer {
         }
     }
 
+    .map-content {
+        overflow: auto;
+    }
+
+    #map {
+        width: 90%;
+        flex: 0 0 auto;
+    }
+    
     footer {
         .nav-bar {
             display: none;
