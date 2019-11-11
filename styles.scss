@@ -980,6 +980,11 @@ header {
 #map {
     width: 68%;
     overflow: hidden;
+
+    .ymaps-2-1-74-map {
+        width: 100% !important;
+        height: 100% !important;
+    }
 }
 
 .map-legend {

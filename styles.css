@@ -1396,6 +1396,11 @@ header {
   overflow: hidden;
 }
 
+#map .ymaps-2-1-74-map {
+  width: 100% !important;
+  height: 100% !important;
+}
+
 .map-legend {
   width: 30%;
   min-width: 384px;
