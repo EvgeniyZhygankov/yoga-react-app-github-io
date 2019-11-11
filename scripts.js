@@ -101,64 +101,64 @@ ul.addEventListener("transitionend", () => {
 
 
 
-// var map;
+var map;
 
-// const marksArr = [
-//     [52.387, 31.023],
-//     [52.4195, 31.0047],
-//     [52.4482, 30.968],
-// ]
+const marksArr = [
+    [52.387, 31.023],
+    [52.4195, 31.0047],
+    [52.4482, 30.968],
+]
 
-// const marksCaptions = [
-//     'Белица-Сити',
-//     'Уютный зал в доме',
-//     'ДК Гомсельмаш'
-// ]
+const marksCaptions = [
+    'Белица-Сити',
+    'Уютный зал в доме',
+    'ДК Гомсельмаш'
+]
 
-// window.onload = () => {
+window.onload = () => {
 
-//     map = new ymaps.Map("map", {
+    map = new ymaps.Map("map", {
 
-//         center: marksArr[0],
-//         zoom: 16
-//     });
+        center: marksArr[0],
+        zoom: 16
+    });
 
-//     const marks = [];
+    const marks = [];
 
-//     for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
 
-//         marks[i] = new ymaps.Placemark(marksArr[i], { iconCaption: marksCaptions[i] }, { iconColor: 'red' });
-//     }
+        marks[i] = new ymaps.Placemark(marksArr[i], { iconCaption: marksCaptions[i] }, { iconColor: 'red' });
+    }
 
-//     marks.forEach((item) => {
+    marks.forEach((item) => {
 
-//         map.geoObjects.add(item);
-//     });
+        map.geoObjects.add(item);
+    });
 
-//     const itemsMapLegend = document.querySelectorAll(".map-legend ul li");
+    const itemsMapLegend = document.querySelectorAll(".map-legend ul li");
 
-//     itemsMapLegend.forEach((item, index) => {
+    itemsMapLegend.forEach((item, index) => {
 
-//         item.addEventListener("click", () => {
+        item.addEventListener("click", () => {
 
-//             itemsMapLegend.forEach((item) => {
+            itemsMapLegend.forEach((item) => {
 
-//                 item.classList.remove("active");
-//             });
+                item.classList.remove("active");
+            });
 
-//             item.className = "active";
+            item.className = "active";
 
-//             map.setCenter(marksArr[index]);
-//         });
-//     });
-// }
+            map.setCenter(marksArr[index]);
+        });
+    });
+}
 
 
 
-// const benefits = document.querySelector(".benefits-content");
+const benefits = document.querySelector(".benefits-content");
 
-// window.addEventListener("scroll", () => {
+window.addEventListener("scroll", () => {
 
-//     if (pageYOffset == 200) {
-//     }
-// });
+    if (pageYOffset == 200) {
+    }
+});
