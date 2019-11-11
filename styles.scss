@@ -1099,12 +1099,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     color: white;
-
-    a p {
-        transform: rotate(-90deg);
-        font-size: 3rem;
-        margin: 0 7.5px 0 0;
-    }
+    
 
     a {
         text-decoration: none;
@@ -1117,12 +1112,35 @@ footer {
         align-items: center;
         font-size: 2rem;
         box-shadow: $boxShadow;
+        padding-top: 6px;
+
+        p {
+            transform: rotate(-90deg);
+            font-size: 3rem;
+            margin: 0 7.5px 0 0;
+        }
     }
     
     > p {
         color: red;
         font-weight: bold;
         margin: 0;
+    }
+}
+
+.arrowUp {
+    width: 15px;
+    height: 15px;
+    border: 2px solid white;
+    border-left: none;
+    border-bottom: none;
+    transform: rotate(-45deg);
+}
+
+@media(min-width: 2000px) {
+
+    .main {
+        justify-content: center;
     }
 }
 

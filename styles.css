@@ -1547,13 +1547,6 @@ footer {
   color: white;
 }
 
-.upBtn a p {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
-  font-size: 3rem;
-  margin: 0 7.5px 0 0;
-}
-
 .upBtn a {
   text-decoration: none;
   width: 44px;
@@ -1572,12 +1565,38 @@ footer {
   font-size: 2rem;
   -webkit-box-shadow: 0 8px 9px 0px rgba(0, 0, 0, 0.21);
           box-shadow: 0 8px 9px 0px rgba(0, 0, 0, 0.21);
+  padding-top: 6px;
+}
+
+.upBtn a p {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+  font-size: 3rem;
+  margin: 0 7.5px 0 0;
 }
 
 .upBtn > p {
   color: red;
   font-weight: bold;
   margin: 0;
+}
+
+.arrowUp {
+  width: 15px;
+  height: 15px;
+  border: 2px solid white;
+  border-left: none;
+  border-bottom: none;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+@media (min-width: 2000px) {
+  .main {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 @media (max-width: 1800px) {
