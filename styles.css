@@ -893,6 +893,10 @@ header {
   line-height: 22px;
 }
 
+#carouselText {
+  display: none;
+}
+
 .black-bold-italic {
   color: #4f4848;
   font-weight: bold;
@@ -1965,8 +1969,55 @@ footer {
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
   }
+  .cols3-content > p {
+    display: none;
+  }
+  #carouselText {
+    max-width: 404px;
+    width: 100%;
+    height: 482px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 0 auto;
+  }
+  #carouselText .carousel-item > p {
+    width: 100%;
+  }
+  #carouselText .carousel-inner,
+  #carouselText .carousel-item {
+    height: 100%;
+    width: 100%;
+  }
+  #carouselText .active,
+  #carouselText .carousel-item-next,
+  #carouselText .carousel-item-right {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  #carouselText .carousel-indicators {
+    bottom: 0px;
+    right: 35px;
+    left: auto;
+  }
+  #carouselText .carousel-control-next {
+    bottom: 3px;
+    right: 0px;
+    left: auto;
+  }
   .benefits-content > img {
     display: none;
+  }
+  .big-form-content {
+    background-size: auto 100%;
   }
   .big-form-container {
     height: auto;
