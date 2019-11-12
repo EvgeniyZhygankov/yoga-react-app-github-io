@@ -907,6 +907,20 @@ header {
   display: none;
 }
 
+.benefit-start {
+  -webkit-transform: translateX(2000px);
+          transform: translateX(2000px);
+}
+
+.benefit-end {
+  -webkit-transition: -webkit-transform 1.5s;
+  transition: -webkit-transform 1.5s;
+  transition: transform 1.5s;
+  transition: transform 1.5s, -webkit-transform 1.5s;
+  -webkit-transform: translateX(0px);
+          transform: translateX(0px);
+}
+
 .benefits > P {
   width: auto;
   -ms-flex-item-align: end;
@@ -1591,7 +1605,7 @@ footer {
           transform: rotate(-45deg);
 }
 
-@media (min-width: 2000px) {
+@media (min-width: 1930px) {
   .main {
     -webkit-box-pack: center;
         -ms-flex-pack: center;

@@ -46,7 +46,7 @@ icon.addEventListener("click", () => {
 
 ul.addEventListener("transitionend", () => {
         
-    if (window.innerWidth < 1110) {
+    if (window.innerWidth < 992) {
 
         
     }
@@ -57,6 +57,7 @@ ul.addEventListener("transitionend", () => {
             ul.style.display = "flex";
         }
         else {
+
             ul.style.display = "none";
         }
     }
@@ -116,6 +117,15 @@ window.onload = () => {
     });
 }
 
+/* код перематывания наверх */
+var IntervalId;
+
+document.querySelector(".upBtn").addEventListener("click", () => { 
+
+    IntervalId = setInterval(() => {
+        window.scrollBy(0, -150);
+    }, 20);
+});
 
 
 window.addEventListener("scroll", () => {
@@ -126,46 +136,62 @@ window.addEventListener("scroll", () => {
     }
 });
 
+const BENEFITS_START = `benefit-start`;
+const BENEFITS_END = `benefit-end`;
+const benefs = document.querySelector(".benefits");
+const benefits = document.querySelectorAll(".benefits-content > .benefit"); 
 
-var IntervalId;
+window.addEventListener("load", () => {
 
-document.querySelector(".upBtn").addEventListener("click", () => { 
+    benefits.forEach(element => {
 
-    IntervalId = setInterval(() => {
-        window.scrollBy(0, -150);
-    }, 20);
+        element.classList.add(BENEFITS_START);
+    });
 });
 
-/* работающий код скрытия меню */
+window.addEventListener("scroll", () => {
+    
+    if (benefs.getBoundingClientRect().top < document.documentElement.clientHeight) {
 
-// icon.addEventListener("click", () => {
+        benefits.forEach(element => {
+    
+            element.classList.remove(BENEFITS_START);
+            element.classList.add(BENEFITS_END);
+        });
+    }   
+});
 
-//     if (navBar.style.width == "0px") {
 
-//         navBar.style.width = "739px";
+/* работающий код скрытия меню 
 
-//         ul.style.display = "flex";
-//         ul.style.opacity = "0";
+icon.addEventListener("click", () => {
 
-//         window.setTimeout(() => {
+    if (navBar.style.width == "0px") {
 
-//             ul.style.opacity = "1";
+        navBar.style.width = "739px";
 
-//         }, 1500);
-//     } 
-//     else {
+        ul.style.display = "flex";
+        ul.style.opacity = "0";
 
-//         navBar.style.width = "0px";
-//         ul.style.opacity = "0";
-//     }
-// });
+        window.setTimeout(() => {
 
-// ul.addEventListener("transitionend", () => {
+            ul.style.opacity = "1";
 
-//     if (getComputedStyle(ul).opacity == "0") {
+        }, 1500);
+    } 
+    else {
 
-//         ul.style.display = "none";
-//     }
-// });
+        navBar.style.width = "0px";
+        ul.style.opacity = "0";
+    }
+});
 
-/* работающий код скрытия меню */
+ul.addEventListener("transitionend", () => {
+
+    if (getComputedStyle(ul).opacity == "0") {
+
+        ul.style.display = "none";
+    }
+});
+
+// работающий код скрытия меню */

@@ -666,7 +666,19 @@ header {
     display: none;
 }
 
+.benefit-start {
+    transform: translateX(2000px);
+}
+
+.benefit-end {
+    transition: transform 1.5s;
+    transform: translateX(0px);
+}
+
 .benefits {
+
+    
+    
 
     > P {
         width: auto;
@@ -1137,7 +1149,7 @@ footer {
     transform: rotate(-45deg);
 }
 
-@media(min-width: 2000px) {
+@media(min-width: 1930px) {
 
     .main {
         justify-content: center;
