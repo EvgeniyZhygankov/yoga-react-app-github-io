@@ -63,8 +63,6 @@ ul.addEventListener("transitionend", () => {
     }
 });
 
-
-
 var map;
 
 const marksArr = [
@@ -117,16 +115,32 @@ window.onload = () => {
     });
 }
 
-/* код перематывания наверх */
+/* код перематывания */
+function Scrolling() {
+
+    return setInterval(() => {
+
+        if (srcollUp) {
+            
+            window.scrollBy(0, -20);
+        }
+        else {
+
+            window.scrollBy(0, 20);
+        }
+        
+    }, 1);
+}
+
+var srcollUp;
 var IntervalId;
+var scrollTarget;
 
 document.querySelector(".upBtn").addEventListener("click", () => { 
 
-    IntervalId = setInterval(() => {
-        window.scrollBy(0, -150);
-    }, 20);
+    srcollUp = true;
+    IntervalId = Scrolling();
 });
-
 
 window.addEventListener("scroll", () => {
 
@@ -134,6 +148,62 @@ window.addEventListener("scroll", () => {
 
         clearInterval(IntervalId);
     }
+
+    if (scrollTarget != undefined) {
+
+        if (srcollUp) {
+
+            if (scrollTarget.getBoundingClientRect().top > 30) {
+
+                clearInterval(IntervalId);
+                scrollTarget = undefined;
+            }
+        }
+        else {
+
+            if (scrollTarget.getBoundingClientRect().top < 30 ||
+                mainBlocks.item(mainBlocks.length - 1).getBoundingClientRect().bottom < document.documentElement.clientHeight + 10) {
+
+                clearInterval(IntervalId);
+                scrollTarget = undefined;
+            }
+        }
+     }
+});
+
+const mainBlocks = document.querySelectorAll("section > *");
+const targetBlocks = [
+    mainBlocks[0],
+    mainBlocks[2],
+    mainBlocks[0],
+    mainBlocks[1],
+    mainBlocks[5],
+    mainBlocks[6]];
+
+const uls = document.querySelectorAll(".nav-bar ul");
+
+uls.forEach((UL) => {
+
+    UL.querySelectorAll("li").forEach((LI, indexLI) => {
+
+        LI.addEventListener("click", () => {
+
+            if (pageYOffset + targetBlocks[indexLI].getBoundingClientRect().top < pageYOffset) {
+                
+                srcollUp = true;
+                IntervalId = Scrolling();
+            }
+            else {
+                
+                if (pageYOffset + targetBlocks[indexLI].getBoundingClientRect().top > pageYOffset) {
+
+                    srcollUp = false;
+                    IntervalId = Scrolling();
+                }
+            }
+            scrollTarget = targetBlocks[indexLI];
+        });
+    });
 });
 
 const BENEFITS_START = `benefit-start`;
@@ -150,30 +220,20 @@ window.addEventListener("load", () => {
 });
 
 window.addEventListener("scroll", () => {
-    
-    // console.log(`clientop - clientheight + 50 = ${document.documentElement.clientTop - document.documentElement.clientHeight + 50}`);
-
-    // console.log(`top = ${document.documentElement.clientTop}`);
-    // console.log(`height = ${document.documentElement.clientHeight}`);
-
-    console.log(`${benefs.getBoundingClientRect().top}`)
 
     if (benefs.getBoundingClientRect().top < document.documentElement.clientHeight) {
 
         benefits.forEach((element, index) => {
     
             setTimeout(() => {
-                
+
                 element.classList.remove(BENEFITS_START);
                 element.classList.add(BENEFITS_END);
             }, (index + 1) * (100));
-
-            
         });
-
-        // benefs.style.background = "red";
     }   
 });
+
 
 
 /* работающий код скрытия меню 
