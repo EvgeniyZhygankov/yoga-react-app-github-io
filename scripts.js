@@ -151,13 +151,27 @@ window.addEventListener("load", () => {
 
 window.addEventListener("scroll", () => {
     
+    // console.log(`clientop - clientheight + 50 = ${document.documentElement.clientTop - document.documentElement.clientHeight + 50}`);
+
+    // console.log(`top = ${document.documentElement.clientTop}`);
+    // console.log(`height = ${document.documentElement.clientHeight}`);
+
+    console.log(`${benefs.getBoundingClientRect().top}`)
+
     if (benefs.getBoundingClientRect().top < document.documentElement.clientHeight) {
 
-        benefits.forEach(element => {
+        benefits.forEach((element, index) => {
     
-            element.classList.remove(BENEFITS_START);
-            element.classList.add(BENEFITS_END);
+            setTimeout(() => {
+                
+                element.classList.remove(BENEFITS_START);
+                element.classList.add(BENEFITS_END);
+            }, (index + 1) * (100));
+
+            
         });
+
+        // benefs.style.background = "red";
     }   
 });
 

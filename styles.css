@@ -921,6 +921,10 @@ header {
           transform: translateX(0px);
 }
 
+.benefits {
+  overflow: hidden;
+}
+
 .benefits > P {
   width: auto;
   -ms-flex-item-align: end;
