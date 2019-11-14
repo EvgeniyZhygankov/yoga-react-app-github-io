@@ -37,29 +37,66 @@ $clPink: #dd3575;
 $clDarkGrey: #4f4848;
 $clBlue: #61a0be;
 
-.block-start {
-    transform: translateX(2000px);
+.start-big-form {
+
+    opacity: 0;
+
+    // input, a, 
+    // textarea, p, 
+    // .media {
+    //     opacity: 0;
+    // }
+}
+
+.end-big-form {
+
+    transition: opacity 1s;
+    opacity: 1;
+
+    // input, a, 
+    // textarea, p, 
+    // .media {
+    //     transition: opacity 1s;
+    //     opacity: 1;
+    // }
+}
+
+.start-form {
+    min-height: 0px !important;
+    flex: 0 0 0px !important;
+    transform: translateY(-200px);
 
     > * {
         opacity: 0;
     }
 }
 
-.block-end {
-    transition: transform 1s, opacity 3s;
-    transform: translateX(0px);
+.end-form {
+    transition: transform 1s, height 1s, flex-basis 1s;
+    transform: translateY(0px);
+
     > * {
+        transition: opacity 2s, transform 3s;
         opacity: 1;
     }
 }
 
-.green-form-start {
-    min-height: 0 !important;
-    height: 0 !important;
+.start {
+    transform: translateY(100px);
+
+    > * {
+        opacity: 0;
+    }
 }
 
-.green-form-end {
-    transition: height 1s;
+.end {
+    transition: transform 1s, opacity 1s;
+    transform: translateY(0px);
+
+    > * {
+        transition: opacity 1s, transform 1s;
+        opacity: 1;
+    }
 }
 
 * {
@@ -350,30 +387,26 @@ header {
     flex-direction: column;
     width: 28.32%;
     flex: 0 2 auto;
-
-    > a {
-        margin-top: 20px;
-        align-self: flex-end;
-    }
 }
 
 .green-form {
-    min-height: 415px;
-    
+    // min-height: 415px;
+    flex: 0 1 649px;
     width: 100%;
-
+    
     background-image: url(./images/greeFormBack.jpg);
     border: 10px solid white;
     border-top: none;
     border-bottom-left-radius: 40px;
     border-bottom-right-radius: 40px;
-    flex: 0 1 649px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     color: white;
     padding: 0 8px 8px;
+
+    overflow: hidden;
 }
 
 .green-form-top {
@@ -491,6 +524,8 @@ header {
     color: black;
     display: flex;
     align-items: center;
+    align-self: flex-end;
+    margin-top: auto;
 
     &:hover {
         text-decoration: none;
@@ -697,7 +732,7 @@ header {
 }
 
 .benefit-end {
-    transition: transform 1.5s;
+    transition: transform 0.7s;
     transform: translateX(0px);
 }
 

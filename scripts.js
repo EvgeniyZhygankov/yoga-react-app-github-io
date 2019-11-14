@@ -77,7 +77,7 @@ const marksCaptions = [
     'ДК Гомсельмаш'
 ]
 
-window.onload = () => {
+window.addEventListener("load", () => {
 
     map = new ymaps.Map("map", {
 
@@ -113,7 +113,7 @@ window.onload = () => {
             map.setCenter(marksArr[index]);
         });
     });
-}
+});
 
 /* код перематывания */
 function Scrolling() {
@@ -206,19 +206,37 @@ uls.forEach((UL) => {
     });
 });
 
-
-function myGetBoundingClientRect(s) {
-
-    return document.querySelector(s).getBoundingClientRect();
-}
-
 const BENEFITS_START = `benefit-start`;
 const BENEFITS_END = `benefit-end`;
+
+const ANIM_START = `start`;
+const ANIM_END = `end`;
+
+const START_FORM = `start-form`;
+const END_FORM = `end-form`;
+
+const START_BIG_FORM = `start-big-form`;
+const END_BIG_FORM = `end-big-form`;
+
 const benefs = document.querySelector(".benefits");
 const benefits = document.querySelectorAll(".benefits-content > .benefit"); 
+const directions = document.querySelectorAll(".direction");
+const textPs = document.querySelectorAll(".cols3-content > p");
+const bigFormFields = document.querySelectorAll(`.big-form-container input, 
+                                                .big-form-container textarea, 
+                                                .big-form-container p, 
+                                                .big-form-container .media`);
 
-const BLOCK_START = `block-start`;
-const BLOCK_END = `block-end`;
+function RemoveClassFrom(elem, className) {
+
+    setTimeout(() => { 
+    
+        if (elem.classList.contains(className)) {
+
+            elem.classList.remove(className);
+        }
+    }, 5000);
+}
 
 window.addEventListener("load", () => {
 
@@ -227,32 +245,86 @@ window.addEventListener("load", () => {
         element.classList.add(BENEFITS_START);
     });
 
-    mainBlocks[1].classList.add(BLOCK_START);
-    mainBlocks[2].classList.add(BLOCK_START);
-    mainBlocks[4].classList.add(BLOCK_START);
-    document.querySelector(".green-form").classList.add("green-form-start");
+    mainBlocks[1].classList.add(ANIM_START);
+    mainBlocks[2].classList.add(ANIM_START);
+
+    bigFormFields.forEach((elem) => {
+
+        elem.classList.add(START_BIG_FORM);
+    });
+
+    textPs.forEach((elem) => {
+
+        elem.classList.add(ANIM_START);
+    })
+
+    directions.forEach((elem) => {
+
+        elem.classList.add(ANIM_START);
+    });
+
+    document.querySelector(".green-form").classList.add(START_FORM);
+    setTimeout(() => {
+
+        document.querySelector(".green-form").classList.remove(START_FORM);
+        document.querySelector(".green-form").classList.add(END_FORM);
+
+        RemoveClassFrom(document.querySelector(".green-form"), END_FORM);
+    }, 1);
 });
 
 window.addEventListener("scroll", () => {
 
-    if (document.querySelector(".green-form").getBoundingClientRect().top > document.documentElement.clientHeight) {
+    textPs.forEach((elem, index) => {
+        
+        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - 300 &&
+            elem.classList.contains(ANIM_START)) {
 
-        document.querySelector(".green-form").classList.remove("green-form-start");
-        document.querySelector(".green-form").classList.add("green-form-end");
-    }
+            setTimeout(() => {
+                
+                elem.classList.remove(ANIM_START);
+                elem.classList.add(ANIM_END);
+                RemoveClassFrom(elem, ANIM_END);
+            }, (index + 1) * 100);
+        }
+    });
+
+    directions.forEach((elem) => {
+
+        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - 300 &&
+        elem.classList.contains(ANIM_START)) {
+
+            elem.classList.remove(ANIM_START);
+            elem.classList.add(ANIM_END);
+
+            RemoveClassFrom(elem, ANIM_END);
+        }
+    });
+
+    bigFormFields.forEach((elem, index) => {
+
+        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - 300 &&
+            elem.classList.contains(START_BIG_FORM)) {
+        
+            setTimeout(() => {
+                
+                elem.classList.remove(START_BIG_FORM);
+                elem.classList.add(END_BIG_FORM);
+
+                RemoveClassFrom(elem, END_BIG_FORM);    
+            }, (index + 1) * 10);
+        }
+    });
 
     mainBlocks.forEach((elem) => {
 
         if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - 300 &&
-            elem.classList.contains(BLOCK_START)) {
+            elem.classList.contains(ANIM_START)) {
 
-            elem.classList.remove(BLOCK_START);
-            elem.classList.add(BLOCK_END);
+            elem.classList.remove(ANIM_START);
+            elem.classList.add(ANIM_END);
 
-            setTimeout(() => {
-
-                elem.classList.remove(BLOCK_END);
-            }, 10000)
+            RemoveClassFrom(elem, ANIM_END);
         }
     });
 
