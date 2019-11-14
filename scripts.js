@@ -206,10 +206,19 @@ uls.forEach((UL) => {
     });
 });
 
+
+function myGetBoundingClientRect(s) {
+
+    return document.querySelector(s).getBoundingClientRect();
+}
+
 const BENEFITS_START = `benefit-start`;
 const BENEFITS_END = `benefit-end`;
 const benefs = document.querySelector(".benefits");
 const benefits = document.querySelectorAll(".benefits-content > .benefit"); 
+
+const BLOCK_START = `block-start`;
+const BLOCK_END = `block-end`;
 
 window.addEventListener("load", () => {
 
@@ -217,11 +226,37 @@ window.addEventListener("load", () => {
 
         element.classList.add(BENEFITS_START);
     });
+
+    mainBlocks[1].classList.add(BLOCK_START);
+    mainBlocks[2].classList.add(BLOCK_START);
+    mainBlocks[4].classList.add(BLOCK_START);
+    document.querySelector(".green-form").classList.add("green-form-start");
 });
 
 window.addEventListener("scroll", () => {
 
-    if (benefs.getBoundingClientRect().top < document.documentElement.clientHeight) {
+    if (document.querySelector(".green-form").getBoundingClientRect().top > document.documentElement.clientHeight) {
+
+        document.querySelector(".green-form").classList.remove("green-form-start");
+        document.querySelector(".green-form").classList.add("green-form-end");
+    }
+
+    mainBlocks.forEach((elem) => {
+
+        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - 300 &&
+            elem.classList.contains(BLOCK_START)) {
+
+            elem.classList.remove(BLOCK_START);
+            elem.classList.add(BLOCK_END);
+
+            setTimeout(() => {
+
+                elem.classList.remove(BLOCK_END);
+            }, 10000)
+        }
+    });
+
+    if (benefs.getBoundingClientRect().top < document.documentElement.clientHeight - 300) {
 
         benefits.forEach((element, index) => {
     
@@ -231,8 +266,8 @@ window.addEventListener("scroll", () => {
                 element.classList.add(BENEFITS_END);
             }, (index + 1) * (100));
         });
-    }   
-});
+    }
+}); 
 
 
 
