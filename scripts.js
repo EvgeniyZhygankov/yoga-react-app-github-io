@@ -226,6 +226,11 @@ const bigFormFields = document.querySelectorAll(`.big-form-container input,
                                                 .big-form-container textarea, 
                                                 .big-form-container p, 
                                                 .big-form-container .media`);
+const photogallery = mainBlocks[5].querySelectorAll(".photos");
+
+const polinasElements = document.querySelectorAll(".polina > *");
+const mapElements = document.querySelectorAll(".map-content > div");
+const footersElements = document.querySelectorAll(".footer-content > *");
 
 function RemoveClassFrom(elem, className) {
 
@@ -240,29 +245,6 @@ function RemoveClassFrom(elem, className) {
 
 window.addEventListener("load", () => {
 
-    benefits.forEach(element => {
-
-        element.classList.add(BENEFITS_START);
-    });
-
-    mainBlocks[1].classList.add(ANIM_START);
-    mainBlocks[2].classList.add(ANIM_START);
-
-    bigFormFields.forEach((elem) => {
-
-        elem.classList.add(START_BIG_FORM);
-    });
-
-    textPs.forEach((elem) => {
-
-        elem.classList.add(ANIM_START);
-    })
-
-    directions.forEach((elem) => {
-
-        elem.classList.add(ANIM_START);
-    });
-
     document.querySelector(".green-form").classList.add(START_FORM);
     setTimeout(() => {
 
@@ -271,13 +253,69 @@ window.addEventListener("load", () => {
 
         RemoveClassFrom(document.querySelector(".green-form"), END_FORM);
     }, 1);
+
+    directions.forEach((elem) => {
+
+        elem.classList.add(ANIM_START);
+    });
+
+    textPs.forEach((elem) => {
+
+        elem.classList.add(ANIM_START);
+    });
+
+    benefits.forEach(element => {
+
+        element.classList.add(BENEFITS_START);
+    });
+
+    bigFormFields.forEach((elem) => {
+
+        elem.classList.add(START_BIG_FORM);
+    });
+
+    photogallery.forEach(elem => {
+        
+        elem.classList.add(ANIM_START);
+    });
+
+    polinasElements.forEach((elem) => {
+
+        elem.classList.add(BENEFITS_START);
+    });
+
+    mapElements.forEach((elem) => {
+
+        elem.classList.add(BENEFITS_START);
+    });
+
+    footersElements.forEach((elem) => {
+
+        elem.classList.add(BENEFITS_START);  
+    });
 });
 
 window.addEventListener("scroll", () => {
 
+    const heightDifference = 200;
+
+    directions.forEach((elem, index) => {
+
+        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - heightDifference &&
+        elem.classList.contains(ANIM_START)) {
+
+            setTimeout(() => {
+                
+                elem.classList.remove(ANIM_START);
+                elem.classList.add(ANIM_END);
+                RemoveClassFrom(elem, ANIM_END);
+            }, (index + 1) > 3 ? ((index - 2) * 100) : ((index + 1) * 100));
+        }
+    });
+
     textPs.forEach((elem, index) => {
         
-        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - 300 &&
+        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - heightDifference &&
             elem.classList.contains(ANIM_START)) {
 
             setTimeout(() => {
@@ -289,21 +327,21 @@ window.addEventListener("scroll", () => {
         }
     });
 
-    directions.forEach((elem) => {
+    if (benefs.getBoundingClientRect().top < document.documentElement.clientHeight - heightDifference) {
 
-        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - 300 &&
-        elem.classList.contains(ANIM_START)) {
+        benefits.forEach((element, index) => {
+    
+            setTimeout(() => {
 
-            elem.classList.remove(ANIM_START);
-            elem.classList.add(ANIM_END);
-
-            RemoveClassFrom(elem, ANIM_END);
-        }
-    });
+                element.classList.remove(BENEFITS_START);
+                element.classList.add(BENEFITS_END);
+            }, (index + 1) * (100));
+        });
+    }
 
     bigFormFields.forEach((elem, index) => {
 
-        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - 300 &&
+        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - heightDifference &&
             elem.classList.contains(START_BIG_FORM)) {
         
             setTimeout(() => {
@@ -316,32 +354,56 @@ window.addEventListener("scroll", () => {
         }
     });
 
-    mainBlocks.forEach((elem) => {
+    photogallery.forEach((elem, index) => {
 
-        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - 300 &&
+        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - heightDifference &&
             elem.classList.contains(ANIM_START)) {
 
-            elem.classList.remove(ANIM_START);
-            elem.classList.add(ANIM_END);
-
-            RemoveClassFrom(elem, ANIM_END);
+            setTimeout(() => {
+                
+                elem.classList.remove(ANIM_START);
+                elem.classList.add(ANIM_END);
+                RemoveClassFrom(elem, ANIM_END);
+            }, (index + 1) > 2 ? ((index - 1) * 100) : ((index + 1) * 100));
         }
     });
 
-    if (benefs.getBoundingClientRect().top < document.documentElement.clientHeight - 300) {
+    if (polinasElements[0].getBoundingClientRect().top < document.documentElement.clientHeight / 2) {
 
-        benefits.forEach((element, index) => {
-    
+        polinasElements.forEach((elem, index) => {
+
             setTimeout(() => {
 
-                element.classList.remove(BENEFITS_START);
-                element.classList.add(BENEFITS_END);
-            }, (index + 1) * (100));
+                elem.classList.remove(BENEFITS_START)
+                elem.classList.add(BENEFITS_END);
+                RemoveClassFrom(elem, BENEFITS_END);
+            }, (index + 1) * 100);
+        });
+    }
+
+    if (mainBlocks[6].getBoundingClientRect().top < document.documentElement.clientHeight / 2) {
+
+        mapElements.forEach((elem, index) => {
+
+            setTimeout(() => {
+
+                elem.classList.remove(BENEFITS_START)
+                elem.classList.add(BENEFITS_END);
+                RemoveClassFrom(elem, BENEFITS_END);
+            }, (index + 1) * 100);
+        });
+
+        footersElements.forEach((elem, index) => {
+
+            setTimeout(() => {
+                
+                elem.classList.remove(BENEFITS_START);
+                elem.classList.add(BENEFITS_END);
+                RemoveClassFrom(elem, BENEFITS_END);
+            }, (index + 1) * 100);
         });
     }
 }); 
-
-
 
 /* работающий код скрытия меню 
 

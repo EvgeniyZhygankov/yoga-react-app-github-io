@@ -84,7 +84,7 @@ $clBlue: #61a0be;
 .start {
     transform: translateY(100px);
 
-    > * {
+    > *:not(span) {
         opacity: 0;
     }
 }
@@ -93,8 +93,8 @@ $clBlue: #61a0be;
     transition: transform 1s, opacity 1s;
     transform: translateY(0px);
 
-    > * {
-        transition: opacity 1s, transform 1s;
+    > *:not(span) {
+        transition: transform 1s, opacity 1s;
         opacity: 1;
     }
 }
@@ -1165,17 +1165,17 @@ footer {
 }
 
 .upBtn {
-    width: 113px;
+    width: 105px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: white;
-    
 
     a {
+        $sizeBTN: 35px;
         text-decoration: none;
-        width: 44px;
-        height: 33px;
+        width: $sizeBTN;
+        height: $sizeBTN;
         background: red;
         border-radius: 50%;
         display: flex;
@@ -1228,7 +1228,7 @@ footer {
 
     #carouselBenefits {
         width: 298px;
-        height: 610px;
+        height: 635px;
         display: flex;
         margin: 0 auto;
 
@@ -1246,13 +1246,13 @@ footer {
         }
 
         .carousel-indicators {
-            bottom: 0px;
+            bottom: 13px;
             right: 30px;
             left: auto;
         }
 
         .carousel-control-next {
-            bottom: 3px;
+            bottom: 16px;
             right: 0px;
             left: auto;
         }

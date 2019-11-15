@@ -43,7 +43,7 @@
           transform: translateY(100px);
 }
 
-.start > * {
+.start > *:not(span) {
   opacity: 0;
 }
 
@@ -56,11 +56,11 @@
           transform: translateY(0px);
 }
 
-.end > * {
+.end > *:not(span) {
   -webkit-transition: opacity 1s, -webkit-transform 1s;
   transition: opacity 1s, -webkit-transform 1s;
-  transition: opacity 1s, transform 1s;
-  transition: opacity 1s, transform 1s, -webkit-transform 1s;
+  transition: transform 1s, opacity 1s;
+  transition: transform 1s, opacity 1s, -webkit-transform 1s;
   opacity: 1;
 }
 
@@ -1616,7 +1616,7 @@ footer {
 }
 
 .upBtn {
-  width: 113px;
+  width: 105px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1631,8 +1631,8 @@ footer {
 
 .upBtn a {
   text-decoration: none;
-  width: 44px;
-  height: 33px;
+  width: 35px;
+  height: 35px;
   background: red;
   border-radius: 50%;
   display: -webkit-box;
@@ -1695,7 +1695,7 @@ footer {
   }
   #carouselBenefits {
     width: 298px;
-    height: 610px;
+    height: 635px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1717,12 +1717,12 @@ footer {
             align-items: flex-start;
   }
   #carouselBenefits .carousel-indicators {
-    bottom: 0px;
+    bottom: 13px;
     right: 30px;
     left: auto;
   }
   #carouselBenefits .carousel-control-next {
-    bottom: 3px;
+    bottom: 16px;
     right: 0px;
     left: auto;
   }
