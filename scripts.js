@@ -301,7 +301,7 @@ window.addEventListener("scroll", () => {
 
     directions.forEach((elem, index) => {
 
-        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - heightDifference &&
+        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight / 2 &&
         elem.classList.contains(ANIM_START)) {
 
             setTimeout(() => {
@@ -315,7 +315,7 @@ window.addEventListener("scroll", () => {
 
     textPs.forEach((elem, index) => {
         
-        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - heightDifference &&
+        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight / 2 &&
             elem.classList.contains(ANIM_START)) {
 
             setTimeout(() => {
@@ -327,7 +327,7 @@ window.addEventListener("scroll", () => {
         }
     });
 
-    if (benefs.getBoundingClientRect().top < document.documentElement.clientHeight - heightDifference) {
+    if (benefs.getBoundingClientRect().top < document.documentElement.clientHeight / 2) {
 
         benefits.forEach((element, index) => {
     
@@ -341,7 +341,7 @@ window.addEventListener("scroll", () => {
 
     bigFormFields.forEach((elem, index) => {
 
-        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - heightDifference &&
+        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight / 2 &&
             elem.classList.contains(START_BIG_FORM)) {
         
             setTimeout(() => {
@@ -356,7 +356,7 @@ window.addEventListener("scroll", () => {
 
     photogallery.forEach((elem, index) => {
 
-        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight - heightDifference &&
+        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight / 2 &&
             elem.classList.contains(ANIM_START)) {
 
             setTimeout(() => {
