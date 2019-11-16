@@ -119,13 +119,13 @@ html, body, .main {
 }
 
 section {
-    // min-height: 6200px;
     max-width: 1706px;
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0 3.2vw;
     flex: 1 1 auto;
+    position: relative;
 }
 
 header {
@@ -335,7 +335,7 @@ header {
     padding: 0;
     margin: 0;
     left: 0;
-    bottom: 12.5%;
+    bottom: 12.8%;
     justify-content: space-between;
     li {
         height: 12px;
@@ -910,10 +910,6 @@ header {
     }
 }
 
-#carouselPhotogallery {
-    display: none;
-}
-
 .photogallery-content {
     width: 92%;
     min-height: 731px;
@@ -923,7 +919,8 @@ header {
 }
 
 .photogallery-container {
-    flex: 0 1 1014px;
+    height: 731px;
+    width: 1020px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -1232,7 +1229,7 @@ footer {
 
     #carouselBenefits {
         width: 298px;
-        height: 635px;
+        height: 640px;
         display: flex;
         margin: 0 auto;
 
@@ -1250,13 +1247,13 @@ footer {
         }
 
         .carousel-indicators {
-            bottom: 13px;
+            bottom: 20px;
             right: 30px;
             left: auto;
         }
 
         .carousel-control-next {
-            bottom: 16px;
+            bottom: 20px;
             right: 0px;
             left: auto;
         }
@@ -1269,55 +1266,25 @@ footer {
         }
     }
 
-    .photogallery-container {
-        display: none;
+    .photogallery-content {
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
 
-    #carouselPhotogallery {
-        width: 494px;
-        height: 370px;
-        display: flex;
-        align-items: flex-start;
-        
-        position: relative;
-        align-self: center;
-        margin: auto;
-
-        .carousel-inner, 
-        .carousel-item, 
-        .active {
-            height: 100%;
-        }
-
-        .active, 
-        .carousel-item-next,
-        .carousel-item-right {
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .carousel-indicators {
-            bottom: 0;
-            right: 30px;
-            left: auto;
-        }
-
-        .carousel-control-next {
-            bottom: 3px;
-            right: 0px;
-            left: auto;
-        }
-
-        .photos {
-            width: 100%;
-        }
+    .polina {
+        margin-top: 100px;
     }
 }
 
 @media (max-width: 1550px) {
 
     section {
-        margin: 0 20px;
+        margin: 0;
+    }
+
+    .block {
+        width: 96%;
     }
 
     .nav-bar {
@@ -1427,10 +1394,6 @@ footer {
 
 @media (max-width: 1350px) {
 
-    .big-form-block {
-        flex: 0 1 auto;
-    }
-
     .big-form-content {
         height: auto;
         justify-content: flex-start;
@@ -1482,7 +1445,7 @@ footer {
 
             .carousel-indicators {
                 width: 50px;
-                bottom: 5px;
+                bottom: 8px;
                 right: 40px;
                 left: auto;
             }
@@ -1495,8 +1458,12 @@ footer {
         }
     }
 
-    .polina {
-        margin: 100px auto 0;
+    .photogallery-container {
+        height: 348px * 4 + 60px;
+        width: auto;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
 }
 
@@ -1647,7 +1614,7 @@ footer {
         }
 
         .carousel-indicators {
-            bottom: 0px;
+            bottom: 3px;
             right: 35px;
             left: auto;
         }
@@ -1756,7 +1723,6 @@ footer {
     }
  
     .directions-sliders-container .slide {
-        width: 100%;
         height: 500px;
 
         .carousel-inner {
@@ -1780,29 +1746,20 @@ footer {
             }
         }
         
+    } 
+
+    .photogallery-container {
+        width: 100%;
     }
 
-    #carouselPhotogallery {
+    .photos {
         width: 100%;
-        height: 230px;
 
-        .carousel-inner {
-            height: 96%;
-        }
-
-        .photos {
+        > img {
+            width: 100%;
             height: 100%;
-
-            > img {
-                width: 100%;
-                height: 100%;
-            }
-
-            .photos-content {
-                font-size: 1rem;
-            }
         }
-    }    
+    }
 
     .map-content {
         height: 800px;
@@ -1816,8 +1773,9 @@ footer {
     }
 
     .map-legend {
-        width: auto;
-        min-width: auto;
+        width: 100%;
+        height: 250px;
+        min-width: 0px;
         margin: 0 0 10px 0;
 
         img {
@@ -1826,13 +1784,16 @@ footer {
     }
 
     .legend-content {
-        height: auto;
-        // margin-top: 20px;
+        height: 92%;
 
         ul {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
 
             li {
-                font-size: 0.7rem;
+                // margin: auto 0;
 
                 &:before {
                     margin-right: 10px;
@@ -1847,6 +1808,13 @@ footer {
 }
 
 @media (max-width: 450px) {
+
+    .directions-sliders-container {
+
+        .slide {
+            width: 100%;
+        }
+    }
 
     .direction {
         width: 100%;      
@@ -1863,14 +1831,30 @@ footer {
         }
 
         a {
-            // width: auto;
-            // height: auto;
             font-size: 0.7rem;
         }
     }
 
     #carouselText {
-        height: auto;
+        height: 548px;
+    }
+
+    .big-form.block {
+        width: 100%;
+    }
+
+    .big-form-content {
+        width: 100%;
+        border-radius: 0px;
+        background-position: center center;
+    }
+
+    .photogallery-container {
+        height: 300px * 4 + 60px;
+    }
+
+    .photos {
+        height: 300px;
     }
 
     .polina {
@@ -1909,6 +1893,10 @@ footer {
             width: 200px;
             height: 40px;
         }
+    }
+
+    #carouselText {
+        height: 724px;
     }
 
     #carouselBenefits {

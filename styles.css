@@ -104,6 +104,7 @@ section {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
+  position: relative;
 }
 
 header {
@@ -371,7 +372,7 @@ header {
   padding: 0;
   margin: 0;
   left: 0;
-  bottom: 12.5%;
+  bottom: 12.8%;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -1244,10 +1245,6 @@ header {
   line-height: 12px;
 }
 
-#carouselPhotogallery {
-  display: none;
-}
-
 .photogallery-content {
   width: 92%;
   min-height: 731px;
@@ -1262,9 +1259,8 @@ header {
 }
 
 .photogallery-container {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 1 1014px;
-          flex: 0 1 1014px;
+  height: 731px;
+  width: 1020px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1700,7 +1696,7 @@ footer {
   }
   #carouselBenefits {
     width: 298px;
-    height: 635px;
+    height: 640px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1722,68 +1718,41 @@ footer {
             align-items: flex-start;
   }
   #carouselBenefits .carousel-indicators {
-    bottom: 13px;
+    bottom: 20px;
     right: 30px;
     left: auto;
   }
   #carouselBenefits .carousel-control-next {
-    bottom: 16px;
+    bottom: 20px;
     right: 0px;
     left: auto;
   }
   .benefits-content > .benefit {
     display: none;
   }
-  .photogallery-container {
-    display: none;
+  .photogallery-content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
-  #carouselPhotogallery {
-    width: 494px;
-    height: 370px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    position: relative;
-    -ms-flex-item-align: center;
-        align-self: center;
-    margin: auto;
-  }
-  #carouselPhotogallery .carousel-inner,
-  #carouselPhotogallery .carousel-item,
-  #carouselPhotogallery .active {
-    height: 100%;
-  }
-  #carouselPhotogallery .active,
-  #carouselPhotogallery .carousel-item-next,
-  #carouselPhotogallery .carousel-item-right {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-  #carouselPhotogallery .carousel-indicators {
-    bottom: 0;
-    right: 30px;
-    left: auto;
-  }
-  #carouselPhotogallery .carousel-control-next {
-    bottom: 3px;
-    right: 0px;
-    left: auto;
-  }
-  #carouselPhotogallery .photos {
-    width: 100%;
+  .polina {
+    margin-top: 100px;
   }
 }
 
 @media (max-width: 1550px) {
   section {
-    margin: 0 20px;
+    margin: 0;
+  }
+  .block {
+    width: 96%;
   }
   .nav-bar {
     max-width: 585px;
@@ -1879,11 +1848,6 @@ footer {
 }
 
 @media (max-width: 1350px) {
-  .big-form-block {
-    -webkit-box-flex: 0;
-        -ms-flex: 0 1 auto;
-            flex: 0 1 auto;
-  }
   .big-form-content {
     height: auto;
     -webkit-box-pack: start;
@@ -1955,7 +1919,7 @@ footer {
   }
   .directions-sliders-container .slide .carousel-indicators {
     width: 50px;
-    bottom: 5px;
+    bottom: 8px;
     right: 40px;
     left: auto;
   }
@@ -1964,8 +1928,19 @@ footer {
     right: 0px;
     left: auto;
   }
-  .polina {
-    margin: 100px auto 0;
+  .photogallery-container {
+    height: 1452px;
+    width: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
 }
 
@@ -2120,7 +2095,7 @@ footer {
             justify-content: flex-start;
   }
   #carouselText .carousel-indicators {
-    bottom: 0px;
+    bottom: 3px;
     right: 35px;
     left: auto;
   }
@@ -2223,7 +2198,6 @@ footer {
     padding: 0;
   }
   .directions-sliders-container .slide {
-    width: 100%;
     height: 500px;
   }
   .directions-sliders-container .slide .carousel-inner {
@@ -2242,22 +2216,15 @@ footer {
   .directions-sliders-container .slide .direction .direction-content {
     font-size: 1rem;
   }
-  #carouselPhotogallery {
+  .photogallery-container {
     width: 100%;
-    height: 230px;
   }
-  #carouselPhotogallery .carousel-inner {
-    height: 96%;
+  .photos {
+    width: 100%;
   }
-  #carouselPhotogallery .photos {
-    height: 100%;
-  }
-  #carouselPhotogallery .photos > img {
+  .photos > img {
     width: 100%;
     height: 100%;
-  }
-  #carouselPhotogallery .photos .photos-content {
-    font-size: 1rem;
   }
   .map-content {
     height: 800px;
@@ -2276,18 +2243,28 @@ footer {
     width: 100%;
   }
   .map-legend {
-    width: auto;
-    min-width: auto;
+    width: 100%;
+    height: 250px;
+    min-width: 0px;
     margin: 0 0 10px 0;
   }
   .map-legend img {
     display: none;
   }
   .legend-content {
-    height: auto;
+    height: 92%;
   }
-  .legend-content ul li {
-    font-size: 0.7rem;
+  .legend-content ul {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
   }
   .legend-content ul li:before {
     margin-right: 10px;
@@ -2298,6 +2275,9 @@ footer {
 }
 
 @media (max-width: 450px) {
+  .directions-sliders-container .slide {
+    width: 100%;
+  }
   .direction {
     width: 100%;
   }
@@ -2311,7 +2291,21 @@ footer {
     font-size: 0.7rem;
   }
   #carouselText {
-    height: auto;
+    height: 548px;
+  }
+  .big-form.block {
+    width: 100%;
+  }
+  .big-form-content {
+    width: 100%;
+    border-radius: 0px;
+    background-position: center center;
+  }
+  .photogallery-container {
+    height: 1260px;
+  }
+  .photos {
+    height: 300px;
   }
   .polina a:nth-child(2) {
     width: 100%;
@@ -2338,6 +2332,9 @@ footer {
   .direction a {
     width: 200px;
     height: 40px;
+  }
+  #carouselText {
+    height: 724px;
   }
   #carouselBenefits {
     width: 100%;
