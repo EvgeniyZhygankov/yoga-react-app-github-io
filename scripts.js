@@ -269,10 +269,10 @@ window.addEventListener("load", () => {
         element.classList.add(BENEFITS_START);
     });
 
-    bigFormFields.forEach((elem) => {
+    // bigFormFields.forEach((elem) => {
 
-        elem.classList.add(START_BIG_FORM);
-    });
+    //     elem.classList.add(START_BIG_FORM);
+    // });
 
     photogallery.forEach(elem => {
         
@@ -356,7 +356,7 @@ window.addEventListener("scroll", () => {
 
     photogallery.forEach((elem, index) => {
 
-        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight / 2 &&
+        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight / 1.5 &&
             elem.classList.contains(ANIM_START)) {
 
             setTimeout(() => {
@@ -368,7 +368,7 @@ window.addEventListener("scroll", () => {
         }
     });
 
-    if (polinasElements[0].getBoundingClientRect().top < document.documentElement.clientHeight / 2) {
+    if (polinasElements[0].getBoundingClientRect().top < document.documentElement.clientHeight / 1.5) {
 
         polinasElements.forEach((elem, index) => {
 
@@ -381,7 +381,7 @@ window.addEventListener("scroll", () => {
         });
     }
 
-    if (mainBlocks[6].getBoundingClientRect().top < document.documentElement.clientHeight / 2) {
+    if (mainBlocks[6].getBoundingClientRect().top < document.documentElement.clientHeight - heightDifference) {
 
         mapElements.forEach((elem, index) => {
 
