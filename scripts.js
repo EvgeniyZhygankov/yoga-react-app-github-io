@@ -220,7 +220,7 @@ const END_BIG_FORM = `end-big-form`;
 
 const benefs = document.querySelector(".benefits");
 const benefits = document.querySelectorAll(".benefits-content > .benefit"); 
-const directions = document.querySelectorAll(".direction");
+const directions = document.querySelectorAll(".directions-container > .direction");
 const textPs = document.querySelectorAll(".cols3-content > p");
 const bigFormFields = document.querySelectorAll(`.big-form-container input, 
                                                 .big-form-container textarea, 
@@ -269,10 +269,10 @@ window.addEventListener("load", () => {
         element.classList.add(BENEFITS_START);
     });
 
-    // bigFormFields.forEach((elem) => {
+    bigFormFields.forEach((elem) => {
 
-    //     elem.classList.add(START_BIG_FORM);
-    // });
+        elem.classList.add(START_BIG_FORM);
+    });
 
     photogallery.forEach(elem => {
         
@@ -341,7 +341,7 @@ window.addEventListener("scroll", () => {
 
     bigFormFields.forEach((elem, index) => {
 
-        if (elem.getBoundingClientRect().top < document.documentElement.clientHeight / 2 &&
+        if (elem.getBoundingClientRect().top < ((document.documentElement.clientHeight < 992) ? (document.documentElement.clientHeight) : (document.documentElement.clientHeight / 2)) &&
             elem.classList.contains(START_BIG_FORM)) {
         
             setTimeout(() => {

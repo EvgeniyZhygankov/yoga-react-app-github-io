@@ -575,7 +575,7 @@ header {
 }
 
 .info {
-    height: 1050px;
+    height: 1070px;
     flex: 0 0 311px;
     display: flex;
     flex-direction: column;
@@ -887,7 +887,8 @@ header {
         resize: none;
     }
 
-    input::placeholder, textarea::placeholder {
+    input::placeholder, 
+    textarea::placeholder {
         color: $clDarkGrey;
         font-weight: bold;
     }
@@ -969,6 +970,7 @@ header {
     a {
         @include btn(31px, $clPink);
         font-size: 0.85rem;
+        height: 62px;
         width: 240px;
         background: $clGreen;
         padding: 7px 7px 7px 0;
@@ -982,7 +984,7 @@ header {
 }
 
 .polina {
-    height: 731px;
+    // height: 731px;
     // flex: 0 2 auto;
     display: flex;
     flex-direction: column;
@@ -1021,6 +1023,7 @@ header {
     a:nth-child(2) {
         width: 223px;
         background-color: #61a0be;
+        margin: 10px 0;
     }
 
     a:nth-child(3) {
@@ -1084,7 +1087,7 @@ header {
     ul {
         list-style-type: none;
         font-weight: bold;
-        margin: 0;
+        margin: 5px;
         padding: 0;
 
         li {
@@ -1295,15 +1298,23 @@ footer {
 
         .carousel-indicators {
             bottom: 0;
+            right: 30px;
+            left: auto;
         }
 
         .carousel-control-next {
             bottom: 3px;
+            right: 0px;
+            left: auto;
+        }
+
+        .photos {
+            width: 100%;
         }
     }
 }
 
-@media (max-width: 1550px) {    
+@media (max-width: 1550px) {
 
     section {
         margin: 0 20px;
@@ -1443,7 +1454,6 @@ footer {
     }
 
     .directions-sliders-container {
-        min-height: 1654px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -1452,15 +1462,14 @@ footer {
 
         .slide {
             width: 395px;
-            height: 600px;
+            height: 560px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            margin-bottom: 25px;
 
-            .carousel-inner,
             .carousel-item {
-                height: 100%;
-                width: 100%;
+                height: auto;
             }
 
             .active,
@@ -1473,13 +1482,13 @@ footer {
 
             .carousel-indicators {
                 width: 50px;
-                bottom: 45px;
+                bottom: 5px;
                 right: 40px;
                 left: auto;
             }
 
             .carousel-control-next {
-                bottom: 48px;
+                bottom: 8px;
                 right: 0px;
                 left: auto;
             }
@@ -1498,7 +1507,7 @@ footer {
     }
 
     section {
-        padding-top: 50px;
+        padding-top: 60px;
     }
 
     #carouselExampleCaptions {
@@ -1715,26 +1724,124 @@ footer {
     }
 }
 
-@media (max-width: 670px) {
+@media (max-width: 664px) {
+
+    footer {
+        margin: 20px 0;
+    }
+
+    .footer-content {
+        height: 100px;
+        justify-content: space-evenly;
+        align-content: space-between;
+    }
 
     .ORMatrix {
-        display: none;
+        order: 3;
+    }
+
+    .upBtn {
+        order: 2;
     }
 }
 
 @media (max-width: 600px) {
 
+    .block-name {
+        font-size: 0.8rem;
+    }
+
     .big-form-content {
         padding: 0;
     }
-
-    #carouselPhotogallery, 
+ 
     .directions-sliders-container .slide {
         width: 100%;
+        height: 500px;
 
-        .photos > img {
-            width: 100%;
+        .carousel-inner {
+            height: 96%;
+        }
+
+        .carousel-item {
             height: 100%;
+        }
+
+        .direction {
+            height: 100%;
+
+            > img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .direction-content {
+                font-size: 1rem;
+            }
+        }
+        
+    }
+
+    #carouselPhotogallery {
+        width: 100%;
+        height: 230px;
+
+        .carousel-inner {
+            height: 96%;
+        }
+
+        .photos {
+            height: 100%;
+
+            > img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .photos-content {
+                font-size: 1rem;
+            }
+        }
+    }    
+
+    .map-content {
+        height: 800px;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    #map {
+        flex: 1 0 auto;
+        width: 100%;
+    }
+
+    .map-legend {
+        width: auto;
+        min-width: auto;
+        margin: 0 0 10px 0;
+
+        img {
+            display: none;
+        }
+    }
+
+    .legend-content {
+        height: auto;
+        // margin-top: 20px;
+
+        ul {
+
+            li {
+                font-size: 0.7rem;
+
+                &:before {
+                    margin-right: 10px;
+                }
+            }
+
+            p {
+                margin: auto 0;
+            }
         }
     }
 }
@@ -1742,17 +1849,7 @@ footer {
 @media (max-width: 450px) {
 
     .direction {
-        width: 100%;
-        position: relative;
-
-        > img {
-            width: 100%;
-            height: 100%;
-        }
-
-        
-
-        
+        width: 100%;      
     }
 
     .direction-content {
@@ -1766,13 +1863,76 @@ footer {
         }
 
         a {
-            width: auto;
-            height: auto;
+            // width: auto;
+            // height: auto;
             font-size: 0.7rem;
         }
     }
 
     #carouselText {
         height: auto;
+    }
+
+    .polina {
+        
+        a:nth-child(2) {
+            width: 100%;
+        }
+
+        a:nth-child(3) {
+            width: 100%;
+        }
+    }
+
+    .ORMatrix {
+        flex-direction: column-reverse;
+    }
+}
+
+@media (max-width: 375px) {
+    
+    .header-left-bottom {
+
+        .media {
+            width: 70px;
+            font-size: 0.8rem;
+        }
+    }
+
+    .info {
+        width: 100%;
+    }
+
+    .direction {
+
+        a {
+            width: 200px;
+            height: 40px;
+        }
+    }
+
+    #carouselBenefits {
+        width: 100%;
+
+        .carousel-inner,
+        .carousel-item,
+        .benefit {
+            width: 100%;
+        }
+
+        .benefit {
+
+            img {
+                width: 100%;
+            }
+
+            p {
+                margin: auto 0;
+            }
+        }
+    }
+
+    .big-form-content {
+        width: auto;
     }
 }
