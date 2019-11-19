@@ -108,12 +108,102 @@ window.addEventListener("load", () => {
                 item.classList.remove("active");
             });
 
-            item.className = "active";
+            item.classList.add("active");
 
             map.setCenter(marksArr[index]);
         });
     });
 });
+
+
+
+
+
+/* код слайдера первого */
+
+const nextBtn = document.querySelector("#nextBtn")
+const itemIndicators = document.querySelectorAll("#mySlider > ul li")
+const items = document.querySelectorAll("#mySlider > .item")
+
+var indexTargetItemGlobal = -1
+var indexCurrentItemGlobal = 0
+const ACTIVE = "active"
+const NON_ACTIVE = "non-active"
+var sliderIntervalId
+const interval = 5000
+
+function ChangeSlide(indexTargetItem = -1) {
+
+    itemIndicators.forEach((item, index) => {
+
+        if (item.classList.contains(ACTIVE)) {
+
+            indexCurrentItemGlobal = index
+        }
+    })
+
+    indexTargetItemGlobal = indexTargetItem == -1 ? (indexCurrentItemGlobal + 1) % 3 : indexTargetItem
+
+    itemIndicators[indexCurrentItemGlobal].classList.remove(ACTIVE)
+    itemIndicators[indexTargetItemGlobal].classList.add(ACTIVE)
+    
+    items[indexCurrentItemGlobal].classList.remove(ACTIVE)
+    
+}
+
+items.forEach((item) => {
+    
+    item.addEventListener("transitionend", () => {
+
+        if (getComputedStyle(items[indexCurrentItemGlobal]).opacity == 0) {
+
+            items[indexCurrentItemGlobal].classList.add(NON_ACTIVE)
+            items[indexTargetItemGlobal].classList.remove(NON_ACTIVE)
+            setTimeout(() => {
+                items[indexTargetItemGlobal].classList.add(ACTIVE)
+            }, 1);
+
+            clearInterval(sliderIntervalId)
+
+            sliderIntervalId = setInterval(() => {
+    
+                ChangeSlide()
+            }, interval);
+        }
+    })
+})
+
+itemIndicators.forEach((itemIndicator, indexItemIndicator) => {
+
+    itemIndicator.addEventListener("click", () => {
+
+        itemIndicators.forEach((item, index) => {
+
+            if (item.classList.contains(ACTIVE)) {
+
+                indexCurrentItemGlobal = index
+            }
+        })
+
+        ChangeSlide(indexItemIndicator)
+    })
+})
+
+nextBtn.addEventListener("click", () => {
+    
+    ChangeSlide();
+})
+
+sliderIntervalId = setInterval(() => {
+    
+    ChangeSlide()
+}, interval);
+
+/* код слайдер первого */
+
+
+
+
 
 /* код перематывания */
 function Scrolling() {
