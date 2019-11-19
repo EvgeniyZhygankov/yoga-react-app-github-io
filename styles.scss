@@ -266,9 +266,7 @@ $bottomPos: 15px;
     z-index: 1;
 
     > ul, > a {
-
         position: absolute;
-        bottom: $bottomPos;
     }
 
     > ul {
@@ -304,6 +302,7 @@ $bottomPos: 15px;
         font-size: 2rem;
         color: $clGrey;
         left: 100px;
+        bottom: $bottomPos;
 
         &:hover {
             color: $clPink;
@@ -375,23 +374,23 @@ $bottomPos: 15px;
     }
 }
 
-#carouselExampleCaptions {
-    width: 68%;
-    position: absolute;
-    top: 40px;
-    left: 210px;
+// #carouselExampleCaptions {
+//     width: 68%;
+//     position: absolute;
+//     top: 40px;
+//     left: 210px;
 
-    img {
-        max-width: 850px;
+//     img {
+//         max-width: 850px;
 
-        // width: 68%;
-        // margin-right: 45px;
+//         // width: 68%;
+//         // margin-right: 45px;
 
 
-        width: 70%;
-        margin-right: 40px;
-    }
-}
+//         width: 70%;
+//         margin-right: 40px;
+//     }
+// }
 
 .carousel-item.active, 
 .carousel-item-next, 
@@ -1400,9 +1399,9 @@ footer {
 
 @media (max-width: 1550px) {
 
-    section {
-        margin: 0;
-    }
+    // section {
+    //     margin: 0;
+    // }
 
     .block {
         width: 96%;
@@ -1416,23 +1415,21 @@ footer {
         margin: 0;
     }
 
-    .descrip-field {
-        height: 344px;
-        padding: 25px;
-    }
-
     .header-right {
         height: 625px;
     }
 
-    #carouselExampleCaptions {
+    #mySlider {
 
         left: 145px;
 
-        img {
-            width: 70%;
-            margin-right: 40px;
+        .item {
+
+            img {
+                width: 70%;
+            }
         }
+        
     }
 
     .carousel-item.active, 
@@ -1533,6 +1530,29 @@ footer {
 
 @media (max-width: 1250px) {
 
+    #mySlider {
+
+        .text {
+            
+            h5 {
+                width: 300px;
+                font-size: 1rem;
+            }
+
+            p {
+                width: 450px;
+                font-size: 0.7rem;
+            }
+        }
+
+        .item {
+
+            a {
+                font-size: 0.6rem;
+            }
+        }
+    }
+
     .directions-container {
         display: none;
     }
@@ -1591,15 +1611,53 @@ footer {
 @media (max-width: 992px) {
 
     .main {
-        background: white;
+        background-size: auto auto;
+        background-position: top right;
     }
 
     section {
-        padding-top: 60px;
+        padding-top: 20px;
     }
 
-    #carouselExampleCaptions {
-        display: none;
+
+    #mySlider {
+        position: relative;
+        width: 100%;
+        left: auto;
+        top: auto;
+        overflow: hidden;
+
+        > ul, > a {
+            bottom: auto;
+        }
+
+        $topPos: $bottomPos + 60;
+
+        > ul {
+            top: $topPos + 23px;
+        }
+
+        > a {
+            top: $topPos;
+        }
+
+        .text {
+
+            display: none;
+        }
+
+        .item {
+
+            img {
+                min-width: 700px;
+                width: 100%;
+                margin: 0;
+            }
+
+            a {
+                display: none;
+            }
+        }
     }
 
     header {

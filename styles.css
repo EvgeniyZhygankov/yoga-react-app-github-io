@@ -283,7 +283,6 @@ header {
 
 #mySlider > ul, #mySlider > a {
   position: absolute;
-  bottom: 15px;
 }
 
 #mySlider > ul {
@@ -318,6 +317,7 @@ header {
   font-size: 2rem;
   color: #828282;
   left: 100px;
+  bottom: 15px;
 }
 
 #mySlider > a:hover {
@@ -410,19 +410,6 @@ header {
   font-size: 0.9rem;
   font-weight: normal;
   line-height: 22px;
-}
-
-#carouselExampleCaptions {
-  width: 68%;
-  position: absolute;
-  top: 40px;
-  left: 210px;
-}
-
-#carouselExampleCaptions img {
-  max-width: 850px;
-  width: 70%;
-  margin-right: 40px;
 }
 
 .carousel-item.active,
@@ -1889,9 +1876,6 @@ footer {
 }
 
 @media (max-width: 1550px) {
-  section {
-    margin: 0;
-  }
   .block {
     width: 96%;
   }
@@ -1901,19 +1885,14 @@ footer {
   .header-left-bottom {
     margin: 0;
   }
-  .descrip-field {
-    height: 344px;
-    padding: 25px;
-  }
   .header-right {
     height: 625px;
   }
-  #carouselExampleCaptions {
+  #mySlider {
     left: 145px;
   }
-  #carouselExampleCaptions img {
+  #mySlider .item img {
     width: 70%;
-    margin-right: 40px;
   }
   .carousel-item.active,
   .carousel-item-next,
@@ -2007,6 +1986,17 @@ footer {
 }
 
 @media (max-width: 1250px) {
+  #mySlider .text h5 {
+    width: 300px;
+    font-size: 1rem;
+  }
+  #mySlider .text p {
+    width: 450px;
+    font-size: 0.7rem;
+  }
+  #mySlider .item a {
+    font-size: 0.6rem;
+  }
   .directions-container {
     display: none;
   }
@@ -2087,12 +2077,37 @@ footer {
 
 @media (max-width: 992px) {
   .main {
-    background: white;
+    background-size: auto auto;
+    background-position: top right;
   }
   section {
-    padding-top: 60px;
+    padding-top: 20px;
   }
-  #carouselExampleCaptions {
+  #mySlider {
+    position: relative;
+    width: 100%;
+    left: auto;
+    top: auto;
+    overflow: hidden;
+  }
+  #mySlider > ul, #mySlider > a {
+    bottom: auto;
+  }
+  #mySlider > ul {
+    top: 98px;
+  }
+  #mySlider > a {
+    top: 75px;
+  }
+  #mySlider .text {
+    display: none;
+  }
+  #mySlider .item img {
+    min-width: 700px;
+    width: 100%;
+    margin: 0;
+  }
+  #mySlider .item a {
     display: none;
   }
   header {
