@@ -101,11 +101,11 @@ section {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 0 3.2vw;
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   position: relative;
+  margin: 0 3.2vw;
 }
 
 header {
@@ -324,27 +324,74 @@ header {
   color: #dd3575;
 }
 
+#mySlider .flex {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+}
+
+#mySlider .flex img, #mySlider .flex a, #mySlider .flex .text {
+  opacity: 0;
+}
+
+#mySlider .item.active img, #mySlider .item.active a, #mySlider .item.active .text {
+  opacity: 1;
+}
+
+#mySlider .item.active .text {
+  -webkit-transition-delay: 0.8s;
+          transition-delay: 0.8s;
+}
+
+#mySlider .item.active a {
+  -webkit-transition-delay: 1.6s;
+          transition-delay: 1.6s;
+}
+
 #mySlider .item {
   width: 100%;
   height: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: none;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  opacity: 0;
-  -webkit-transition: opacity 1s;
-  transition: opacity 1s;
+}
+
+#mySlider .item img, #mySlider .item a, #mySlider .item .text {
+  -webkit-transition: opacity 0.8s;
+  transition: opacity 0.8s;
 }
 
 #mySlider .item img {
   max-width: 850px;
   width: 70%;
   margin-right: 50px;
+}
+
+#mySlider .item .text {
+  position: absolute;
+  left: 0px;
+  top: 180px;
+}
+
+#mySlider .item .text h5 {
+  width: 510px;
+  height: auto;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+  padding: 0;
+}
+
+#mySlider .item .text p {
+  width: 463px;
+  height: auto;
+  font-size: 0.9rem;
+  font-weight: normal;
+  line-height: 22px;
 }
 
 #mySlider .item a {
@@ -381,35 +428,17 @@ header {
   background-color: #dd3575;
 }
 
-#mySlider .active {
-  opacity: 1;
-}
-
-#mySlider .non-active {
-  display: none;
-}
-
-#mySlider .text {
+#carouselExampleCaptions {
+  width: 68%;
   position: absolute;
-  left: 0px;
-  top: 180px;
+  top: 40px;
+  left: 210px;
 }
 
-#mySlider .text h5 {
-  width: 510px;
-  height: auto;
-  font-size: 1.5rem;
-  font-weight: bold;
-  display: block;
-  padding: 0;
-}
-
-#mySlider .text p {
-  width: 463px;
-  height: auto;
-  font-size: 0.9rem;
-  font-weight: normal;
-  line-height: 22px;
+#carouselExampleCaptions img {
+  max-width: 850px;
+  width: 70%;
+  margin-right: 40px;
 }
 
 .carousel-item.active,
@@ -2081,7 +2110,8 @@ footer {
     background-position: top right;
   }
   section {
-    padding-top: 20px;
+    padding-top: 40px;
+    margin: 0;
   }
   #mySlider {
     position: relative;
@@ -2095,16 +2125,22 @@ footer {
   }
   #mySlider > ul {
     top: 98px;
+    left: 20px;
   }
   #mySlider > a {
     top: 75px;
+    left: 120px;
   }
   #mySlider .text {
     display: none;
   }
+  #mySlider .item {
+    overflow: hidden;
+  }
   #mySlider .item img {
-    min-width: 700px;
-    width: 100%;
+    position: absolute;
+    right: -220px;
+    width: 700px;
     margin: 0;
   }
   #mySlider .item a {

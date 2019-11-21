@@ -117,91 +117,92 @@ window.addEventListener("load", () => {
 
 
 
+/* код слайдера mark 2 */
 
-
-/* код слайдера первого */
-
+const ACTIVE = `active`
+const FLEX = `flex`
 const nextBtn = document.querySelector("#nextBtn")
 const itemIndicators = document.querySelectorAll("#mySlider > ul li")
 const items = document.querySelectorAll("#mySlider > .item")
 
-var indexTargetItemGlobal = -1
-var indexCurrentItemGlobal = 0
-const ACTIVE = "active"
-const NON_ACTIVE = "non-active"
+var indexCurrentItemGlobal, indexTargetItemGlobal
+
 var sliderIntervalId
-const interval = 5000
 
-function ChangeSlide(indexTargetItem = -1) {
-
-    itemIndicators.forEach((item, index) => {
-
+function GetCurrentItem() {
+    
+    for (let i = 0; i < items.length; i++) {
+        const item = items[i];
+        
         if (item.classList.contains(ACTIVE)) {
 
-            indexCurrentItemGlobal = index
+            return i
         }
-    })
+    }
 
-    indexTargetItemGlobal = indexTargetItem == -1 ? (indexCurrentItemGlobal + 1) % 3 : indexTargetItem
-
-    itemIndicators[indexCurrentItemGlobal].classList.remove(ACTIVE)
-    itemIndicators[indexTargetItemGlobal].classList.add(ACTIVE)
-    
-    items[indexCurrentItemGlobal].classList.remove(ACTIVE)
-    
+    return -1
 }
 
-items.forEach((item) => {
+function DisableCurrentItem() {
     
-    item.addEventListener("transitionend", () => {
-
-        if (getComputedStyle(items[indexCurrentItemGlobal]).opacity == 0) {
-
-            items[indexCurrentItemGlobal].classList.add(NON_ACTIVE)
-            items[indexTargetItemGlobal].classList.remove(NON_ACTIVE)
-            setTimeout(() => {
-                items[indexTargetItemGlobal].classList.add(ACTIVE)
-            }, 1);
-
-            clearInterval(sliderIntervalId)
-
-            sliderIntervalId = setInterval(() => {
+    itemIndicators[indexCurrentItemGlobal].classList.remove(ACTIVE)
     
-                ChangeSlide()
-            }, interval);
-        }
-    })
-})
+    items[indexCurrentItemGlobal].classList.remove(ACTIVE)
+    items[indexTargetItemGlobal].classList.remove(FLEX)
+}
 
-itemIndicators.forEach((itemIndicator, indexItemIndicator) => {
+function ChangeSlide(indexTargetItem = -1) {
+    
+    indexCurrentItemGlobal = GetCurrentItem()
 
-    itemIndicator.addEventListener("click", () => {
+    if (indexCurrentItemGlobal > -1) {
 
-        itemIndicators.forEach((item, index) => {
+        DisableCurrentItem()
+    }
 
-            if (item.classList.contains(ACTIVE)) {
+    indexTargetItemGlobal = indexTargetItem == -1 ? 
+                            (indexCurrentItemGlobal + 1) % 3 
+                                : 
+                            indexTargetItem
 
-                indexCurrentItemGlobal = index
-            }
+    itemIndicators[indexTargetItemGlobal].classList.add(ACTIVE)
+
+    items[indexTargetItemGlobal].classList.add(FLEX)
+    requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            items[indexTargetItemGlobal].classList.add(ACTIVE)
         })
-
-        ChangeSlide(indexItemIndicator)
     })
-})
+
+    clearInterval(sliderIntervalId)
+
+    AutoSlide()
+}
 
 nextBtn.addEventListener("click", () => {
-    
-    ChangeSlide();
+
+    ChangeSlide()
 })
 
-sliderIntervalId = setInterval(() => {
+itemIndicators.forEach((item, index) => {
+
+    item.addEventListener("click", () => {
+
+        ChangeSlide(index)
+    })
+})
+
+function AutoSlide() {
     
-    ChangeSlide()
-}, interval);
+    sliderIntervalId = setInterval(() => {
+    
+        nextBtn.click()
+    }, 10000);
+}
 
-/* код слайдер первого */
+nextBtn.click()
 
-
+/* код слайдера mark 2 */
 
 
 
@@ -264,11 +265,11 @@ window.addEventListener("scroll", () => {
 const mainBlocks = document.querySelectorAll("section > *");
 const targetBlocks = [
     mainBlocks[0],
-    mainBlocks[2],
+    mainBlocks[3],
     mainBlocks[0],
-    mainBlocks[1],
-    mainBlocks[5],
-    mainBlocks[6]];
+    mainBlocks[2],
+    mainBlocks[6],
+    mainBlocks[7]];
 
 const uls = document.querySelectorAll(".nav-bar ul");
 
@@ -316,7 +317,7 @@ const bigFormFields = document.querySelectorAll(`.big-form-container input,
                                                 .big-form-container textarea, 
                                                 .big-form-container p, 
                                                 .big-form-container .media`);
-const photogallery = mainBlocks[5].querySelectorAll(".photos");
+const photogallery = mainBlocks[6].querySelectorAll(".photos");
 
 const polinasElements = document.querySelectorAll(".polina > *");
 const mapElements = document.querySelectorAll(".map-content > div");
@@ -471,7 +472,7 @@ window.addEventListener("scroll", () => {
         });
     }
 
-    if (mainBlocks[6].getBoundingClientRect().top < document.documentElement.clientHeight - heightDifference) {
+    if (mainBlocks[7].getBoundingClientRect().top < document.documentElement.clientHeight - heightDifference) {
 
         mapElements.forEach((elem, index) => {
 
