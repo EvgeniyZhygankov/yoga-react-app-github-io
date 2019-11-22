@@ -339,13 +339,13 @@ header {
 }
 
 #mySlider .item.active .text {
-  -webkit-transition-delay: 0.8s;
-          transition-delay: 0.8s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
 }
 
 #mySlider .item.active a {
-  -webkit-transition-delay: 1.6s;
-          transition-delay: 1.6s;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
 }
 
 #mySlider .item {
@@ -361,12 +361,12 @@ header {
 }
 
 #mySlider .item img, #mySlider .item a, #mySlider .item .text {
-  -webkit-transition: opacity 0.8s;
-  transition: opacity 0.8s;
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
 }
 
 #mySlider .item img {
-  max-width: 850px;
+  max-width: 610px;
   width: 70%;
   margin-right: 50px;
 }
@@ -2526,7 +2526,7 @@ footer {
     height: 40px;
   }
   #carouselText {
-    height: 724px;
+    height: 620px;
   }
   #carouselBenefits {
     width: 100%;

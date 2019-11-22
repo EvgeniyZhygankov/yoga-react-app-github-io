@@ -143,9 +143,9 @@
                                     </div>
                                     <img src="./images/logo-form-bottom.png">
                                 </div>
-                                <form class="green-form-content-bottom">
-                                    <input type="text" placeholder="Ваше имя">
-                                    <input type="text" placeholder="Введите телефон">
+                                <form class="green-form-content-bottom" action="./mail.php" method="POST">
+                                    <input type="text" placeholder="Ваше имя" id="uname">
+                                    <input type="text" placeholder="Введите телефон" id="unumber">
                                     <input class="btn" type="submit" value="ОТПРАВИТЬ ЗАЯВКУ">
                                 </form>
                             </div>
@@ -789,15 +789,15 @@
                                 <i class="fab fa-vk"></i>
                                 <i class="fab fa-facebook-square"></i>
                             </div>
-                            <form>
-                                <input type="text" placeholder="ВАШЕ ИМЯ">
-                                <input type="text" placeholder="ВАШ ТЕЛЕФОН">
-                                <input type="text" placeholder="УКАЖИТЕ ВАШ ВОЗРАСТ">
-                                <textarea placeholder="ВАШ ВОПРОС"></textarea>
+                            <form method="POST" action="./mailBigForm.php">
+                                <input type="text" placeholder="ВАШЕ ИМЯ" name="name">
+                                <input type="text" placeholder="ВАШ ТЕЛЕФОН" name="phone">
+                                <input type="text" placeholder="УКАЖИТЕ ВАШ ВОЗРАСТ" name="age">
+                                <textarea placeholder="ВАШ ВОПРОС" name="message"></textarea>
                                 <div>
                                     <input type="submit" value="ОТПРАВИТЬ">
                                     <p>
-                                        <input type="checkbox">Отправляя сообщение, я принимаю пользовательское
+                                        <input type="checkbox" name="agree">Отправляя сообщение, я принимаю пользовательское
                                         соглашение и подтверждаю, что ознакомлен и согласен с политикой
                                         конфиденциальности данного сайта
                                     </p>
