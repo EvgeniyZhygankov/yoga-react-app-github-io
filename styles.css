@@ -415,7 +415,7 @@ header {
   z-index: 1;
   height: 9%;
   width: 25%;
-  min-width: 150px;
+  min-width: 200px;
   background-color: #6ea480;
   color: white !important;
   font-size: 0.75rem;
@@ -2131,9 +2131,6 @@ footer {
     top: 75px;
     left: 120px;
   }
-  #mySlider .text {
-    display: none;
-  }
   #mySlider .item {
     overflow: hidden;
   }
@@ -2143,8 +2140,22 @@ footer {
     width: 700px;
     margin: 0;
   }
+  #mySlider .item a, #mySlider .item .text {
+    left: 15px;
+  }
+  #mySlider .item .text {
+    top: 130px;
+  }
+  #mySlider .item .text h5 {
+    width: 300px;
+    font-size: 1rem;
+  }
+  #mySlider .item .text p {
+    width: 300px;
+    font-size: 0.6rem;
+  }
   #mySlider .item a {
-    display: none;
+    top: 400px;
   }
   header {
     width: 100%;
@@ -2386,8 +2397,17 @@ footer {
   .block-name {
     font-size: 0.8rem;
   }
-  .big-form-content {
-    padding: 0;
+  .big-form-container {
+    height: 700px;
+  }
+  .big-form-content-bottom {
+    width: 100%;
+  }
+  .big-form-content-bottom form div {
+    height: 130px;
+  }
+  .big-form-content-bottom form div p {
+    width: 95%;
   }
   .directions-sliders-container .slide {
     height: 500px;
@@ -2492,6 +2512,7 @@ footer {
     width: 100%;
     border-radius: 0px;
     background-position: center center;
+    padding: 5px;
   }
   .photogallery-container {
     height: 1260px;

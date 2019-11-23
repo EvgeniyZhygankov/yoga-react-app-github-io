@@ -373,7 +373,7 @@ $bottomPos: 15px;
             @include btn(31px, $clPink);
             height: 9%;
             width: 25%;
-            min-width: 150px;
+            min-width: 200px;
             background-color: $clGreen;
             color: white !important;
             font-size: 0.75rem;
@@ -1648,10 +1648,7 @@ footer {
             left: 20px + 100px;
         }
 
-        .text {
-
-            display: none;
-        }
+        
 
         .item {
             overflow: hidden;
@@ -1665,8 +1662,28 @@ footer {
                 margin: 0;
             }
 
+            $topPos: 130px;
+
+            a, .text {
+                left: 15px;
+            }
+
+            .text {
+                top: $topPos;
+
+                h5 {
+                    width: 300px;
+                    font-size: 1rem;
+                }
+
+                p {
+                    width: 300px;
+                    font-size: 0.6rem;
+                }
+            }
+
             a {
-                display: none;
+                top: $topPos + 270px;
             }
         }
     }
@@ -1907,11 +1924,26 @@ footer {
     .block-name {
         font-size: 0.8rem;
     }
-
-    .big-form-content {
-        padding: 0;
-    }
  
+    .big-form-container {
+        height: 700px;
+    }
+
+    .big-form-content-bottom {
+        width: 100%;
+
+        form {
+
+            div {
+                height: 130px;
+
+                p {
+                    width: 95%;
+                }
+            }
+        }
+    }
+
     .directions-sliders-container .slide {
         height: 500px;
 
@@ -2037,6 +2069,7 @@ footer {
         width: 100%;
         border-radius: 0px;
         background-position: center center;
+        padding: 5px;
     }
 
     .photogallery-container {
