@@ -394,7 +394,6 @@ header {
 }
 
 #mySlider .item img {
-  max-width: 610px;
   width: 70%;
   margin-right: 50px;
 }
