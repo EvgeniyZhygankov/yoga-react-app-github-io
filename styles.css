@@ -2152,13 +2152,12 @@ footer {
   }
   #mySlider .item .text p {
     width: 200px;
-    font-size: 0.6rem;
   }
   #mySlider .item .text p span {
     display: none;
   }
   #mySlider .item a {
-    top: 300px;
+    top: 340px;
   }
   header {
     width: 100%;
