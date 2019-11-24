@@ -2185,10 +2185,16 @@ footer {
     min-width: 160px;
     height: 70vh;
     position: absolute;
-    top: -100vh;
-    -webkit-transition: top 1s;
-    transition: top 1s;
+    top: 0px;
+    left: -100vh;
+    -webkit-transition: left 1s;
+    transition: left 1s;
     z-index: 20;
+    margin: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 0;
+    background: #e7e7e7;
   }
   .header-left-top .nav-bar ul {
     display: -webkit-box;

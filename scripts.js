@@ -15,13 +15,13 @@ icon.addEventListener("click", () => {
             ul.style.display = "flex";
         }
 
-        if (getComputedStyle(navBar).top == `-${window.innerHeight}px`) {
+        if (getComputedStyle(navBar).left == `-${window.innerHeight}px`) {
 
-            navBar.style.top = "5px";
+            navBar.style.left = "0px";
         }
         else {
 
-            navBar.style.top = `-${window.innerHeight}px`;
+            navBar.style.left = `-${window.innerHeight}px`;
         }
     }
     else {
@@ -495,3 +495,15 @@ window.addEventListener("scroll", () => {
         });
     }
 });
+
+/* пролистывание на кнопки в слайдере начало*/
+
+const btns = document.querySelectorAll("#mySlider .item > a")
+console.log(btns)
+
+btns[0].addEventListener("click", () => {
+
+
+})
+
+/* пролистывание на кнопки в слайдере конец */

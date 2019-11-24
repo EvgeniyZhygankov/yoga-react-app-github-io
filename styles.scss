@@ -1719,14 +1719,21 @@ footer {
             min-width: 160px;
             height: 70vh;
             position: absolute;
-            top: -100vh;
-            transition: top 1s;
+            top: 0px;
+            left: -100vh;
+            transition: left 1s;
             z-index: 20;
+            margin: 0;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 0;
+            background: rgb(231, 231, 231);
 
             ul {
                 display: flex;
                 flex-direction: column;
                 opacity: 1;
+                // color: $clGreen;
             }
         }
     }
