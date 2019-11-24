@@ -1,4 +1,4 @@
-const icon = document.querySelector(".fa-bars");
+const icon = document.querySelector(".header-left-top > i");
 const navBar = document.querySelector(".nav-bar");
 const ul = document.querySelector(".nav-bar ul");
 
