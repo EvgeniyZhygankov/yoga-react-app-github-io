@@ -1848,6 +1848,17 @@ footer {
     .big-form-container {
         height: auto;
         justify-content: center;
+
+        .block-name {
+            width: auto;
+            margin: 0;
+            font-size: 0.8rem;
+
+            &:before {
+                content: "";
+                margin: 0;
+            }
+        }
     }
 
     .big-form-content-bottom {

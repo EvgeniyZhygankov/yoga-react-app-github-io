@@ -2321,6 +2321,15 @@ footer {
         -ms-flex-pack: center;
             justify-content: center;
   }
+  .big-form-container .block-name {
+    width: auto;
+    margin: 0;
+    font-size: 0.8rem;
+  }
+  .big-form-container .block-name:before {
+    content: "";
+    margin: 0;
+  }
   .big-form-content-bottom {
     height: 650px;
   }
