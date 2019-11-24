@@ -80,13 +80,41 @@ html, body, .main {
   overflow-x: hidden;
 }
 
+.main-man {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(10%, #d2e9de), color-stop(40%, white)), url(./images/back-header-man.jpg) no-repeat;
+  background: linear-gradient(rgba(255, 255, 255, 0), #d2e9de 10%, white 40%), url(./images/back-header-man.jpg) no-repeat;
+}
+
+.main-women {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(10%, #d2e9de), color-stop(40%, white)), url(./images/back-header-women.jpg) no-repeat;
+  background: linear-gradient(rgba(255, 255, 255, 0), #d2e9de 10%, white 40%), url(./images/back-header-women.jpg) no-repeat;
+}
+
+.main-tea {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(10%, #d2e9de), color-stop(40%, white)), url(./images/back-header-tea.jpg) no-repeat;
+  background: linear-gradient(rgba(255, 255, 255, 0), #d2e9de 10%, white 40%), url(./images/back-header-tea.jpg) no-repeat;
+}
+
 .main {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(10%, #d2e9de), color-stop(40%, white)), url(./images/mainBack.png) no-repeat;
-  background: linear-gradient(rgba(255, 255, 255, 0), #d2e9de 10%, white 40%), url(./images/mainBack.png) no-repeat;
   background-size: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.leaf-right, .leaf-left {
+  position: absolute;
+  z-index: 1;
+}
+
+.leaf-left {
+  top: 300px;
+  left: 0px;
+}
+
+.leaf-right {
+  top: 500px;
+  right: 0;
 }
 
 section {
@@ -2104,6 +2132,9 @@ footer {
 }
 
 @media (max-width: 992px) {
+  .leaf-left, .leaf-right {
+    display: none;
+  }
   .main {
     background-size: auto auto;
     background-position: top right;

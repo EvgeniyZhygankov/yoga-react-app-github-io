@@ -124,10 +124,13 @@ const FLEX = `flex`
 const nextBtn = document.querySelector("#nextBtn")
 const itemIndicators = document.querySelectorAll("#mySlider > ul li")
 const items = document.querySelectorAll("#mySlider > .item")
+const MAIN = document.querySelector(".main")
 
 var indexCurrentItemGlobal, indexTargetItemGlobal
 
 var sliderIntervalId
+
+const arrayImages = ["man", "women", "tea"]
 
 function GetCurrentItem() {
     
@@ -177,6 +180,9 @@ function ChangeSlide(indexTargetItem = -1) {
     clearInterval(sliderIntervalId)
 
     AutoSlide()
+
+    MAIN.className = "main"
+    MAIN.classList.add(`main-${arrayImages[indexTargetItemGlobal]}`)
 }
 
 nextBtn.addEventListener("click", () => {
@@ -505,7 +511,7 @@ console.log(btns)
 
 btns[0].addEventListener("click", () => {
 
-
+    
 })
 
 /* пролистывание на кнопки в слайдере конец */

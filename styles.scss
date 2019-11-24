@@ -40,25 +40,12 @@ $clBlue: #61a0be;
 .start-big-form {
 
     opacity: 0;
-
-    // input, a, 
-    // textarea, p, 
-    // .media {
-    //     opacity: 0;
-    // }
 }
 
 .end-big-form {
 
     transition: opacity 1s;
     opacity: 1;
-
-    // input, a, 
-    // textarea, p, 
-    // .media {
-    //     transition: opacity 1s;
-    //     opacity: 1;
-    // }
 }
 
 .start-form {
@@ -112,11 +99,39 @@ html, body, .main {
     overflow-x: hidden; 
 }
 
-.main {
+.main-man {
     background: linear-gradient(rgba(white, 0), #d2e9de 10%, white 40%), 
-                url(./images/mainBack.png) no-repeat;
+                url(./images/back-header-man.jpg) no-repeat;
+}
+
+.main-women {
+    background: linear-gradient(rgba(white, 0), #d2e9de 10%, white 40%), 
+                url(./images/back-header-women.jpg) no-repeat;
+}
+
+.main-tea {
+    background: linear-gradient(rgba(white, 0), #d2e9de 10%, white 40%), 
+                url(./images/back-header-tea.jpg) no-repeat;
+}
+
+.main {
     background-size: 100%;
     display: flex;
+}
+
+.leaf-right, .leaf-left {
+    position: absolute;
+    z-index: 1;
+}
+
+.leaf-left {
+    top: 300px;
+    left: 0px;
+}
+
+.leaf-right {
+    top: 500px;
+    right: 0;
 }
 
 section {
@@ -1613,6 +1628,10 @@ footer {
 }
 
 @media (max-width: 992px) {
+
+    .leaf-left, .leaf-right {
+        display: none;
+    }
 
     .main {
         background-size: auto auto;
