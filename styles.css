@@ -2110,7 +2110,6 @@ footer {
     background-position: top right;
   }
   section {
-    padding-top: 40px;
     margin: 0;
   }
   #mySlider {
@@ -2122,6 +2121,7 @@ footer {
   }
   #mySlider > ul, #mySlider > a {
     bottom: auto;
+    display: none;
   }
   #mySlider > ul {
     top: 98px;
@@ -2144,18 +2144,21 @@ footer {
     left: 15px;
   }
   #mySlider .item .text {
-    top: 130px;
+    top: 100px;
   }
   #mySlider .item .text h5 {
-    width: 300px;
+    width: 250px;
     font-size: 1rem;
   }
   #mySlider .item .text p {
-    width: 300px;
+    width: 200px;
     font-size: 0.6rem;
   }
+  #mySlider .item .text p span {
+    display: none;
+  }
   #mySlider .item a {
-    top: 400px;
+    top: 300px;
   }
   header {
     width: 100%;
@@ -2508,11 +2511,20 @@ footer {
   .big-form.block {
     width: 100%;
   }
+  .big-form-container {
+    height: 600px;
+  }
   .big-form-content {
     width: 100%;
     border-radius: 0px;
     background-position: center center;
-    padding: 5px;
+    padding: 4%;
+  }
+  .big-form-content-bottom {
+    height: 92%;
+  }
+  .big-form-content-bottom form textarea {
+    height: 200px;
   }
   .photogallery-container {
     height: 1260px;
