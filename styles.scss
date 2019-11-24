@@ -1691,7 +1691,8 @@ footer {
 
     header {
         width: 100%;
-        min-height: 50px;
+        min-height: auto;
+        height: 80px;
         position: fixed;
         z-index: 20;
         top: 0px;
@@ -1715,25 +1716,22 @@ footer {
         .nav-bar {
             // width: 150px;
             // height: 250px;
-            width: 30vw;
+            width: 100vw;
             min-width: 160px;
-            height: 70vh;
+            height: calc(100vh - 80px);
             position: absolute;
-            top: 0px;
+            top: 100%;
             left: -100vh;
-            transition: left 1s;
+            transition: left 0.7s;
             z-index: 20;
             margin: 0;
-            border-top-left-radius: 0;
-            border-top-right-radius: 0;
-            border-bottom-left-radius: 0;
-            background: rgb(231, 231, 231);
+            border-radius: 0;
+            background: rgb(247, 247, 247);
 
             ul {
                 display: flex;
                 flex-direction: column;
                 opacity: 1;
-                // color: $clGreen;
             }
         }
     }

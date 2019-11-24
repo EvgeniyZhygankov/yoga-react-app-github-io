@@ -293,6 +293,8 @@ uls.forEach((UL) => {
                 }
             }
             scrollTarget = targetBlocks[indexLI];
+
+            icon.click()
         });
     });
 });
