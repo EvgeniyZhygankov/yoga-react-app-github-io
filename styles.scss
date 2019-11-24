@@ -879,7 +879,6 @@ $bottomPos: 15px;
 
     > img {
         z-index: 0;
-        width: 100%;
         position: absolute;
         left: 0;
     }
@@ -1714,8 +1713,6 @@ footer {
         justify-content: space-between;
 
         .nav-bar {
-            // width: 150px;
-            // height: 250px;
             width: 100vw;
             min-width: 160px;
             height: calc(100vh - 80px);
