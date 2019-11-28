@@ -17,9 +17,29 @@
 </head>
 
 <body>
+
+    <div id="timetable" class="modalWindow display-none">
+        <div>
+            <img src="./images/shablon_grafika.png">
+            <a class="requestBtn">ОТПРАВИТЬ ЗАЯВКУ</a>
+        </div>
+    </div>
+
+    <div id="adaptiveGreenForm" class="modalWindow display-none">
+        <a>X</a>
+        <form class="green-form-content-bottom" action="./mail.php" method="POST">
+            <input type="text" placeholder="Ваше имя" id="uname">
+            <input type="text" placeholder="Введите телефон" id="unumber">
+            <input class="requestBtn" type="submit" value="ОТПРАВИТЬ ЗАЯВКУ">
+        </form>
+    </div>
+
     <div class="main">
         <img src="./images/leaf-left.png" class="leaf-left">
         <img src="./images/leaf-right.png" class="leaf-right">
+
+        
+
         <section>          
             <div id="mySlider">
                 <ul>
@@ -116,6 +136,7 @@
                             <i class="fab fa-facebook-square"></i>
                         </div>
                         <div class="descrip-field"></div>
+                        <a class="requestBtn">ОТПРАВИТЬ ЗАЯВКУ</a>
                     </div>
                 </div>
 
@@ -143,13 +164,12 @@
                                 <form class="green-form-content-bottom" action="./mail.php" method="POST">
                                     <input type="text" placeholder="Ваше имя" id="uname">
                                     <input type="text" placeholder="Введите телефон" id="unumber">
-                                    <input class="btn" type="submit" value="ОТПРАВИТЬ ЗАЯВКУ">
+                                    <input class="requestBtn" type="submit" value="ОТПРАВИТЬ ЗАЯВКУ">
                                 </form>
                             </div>
                         </div>
                     </div>
                     <a class="youtube" href="https://www.youtube.com/channel/UCCy9FmTBXNmzPaeGhTZqQng">
-                        <!-- <img src="./images/youtube.png"> -->
                         <i class="fab fa-youtube"></i>
                         YouTube
                         <p>

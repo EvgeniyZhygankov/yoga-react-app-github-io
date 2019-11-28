@@ -1,8 +1,27 @@
-const icon = document.querySelector(".header-left-top > i");
-const navBar = document.querySelector(".nav-bar");
-const ul = document.querySelector(".nav-bar ul");
+const icon = document.querySelector(".header-left-top > i")
+const navBar = document.querySelector(".nav-bar")
+const ul = document.querySelector(".nav-bar ul")
 
-const NAV_BAR_HIDE = "nav-bar-hide";
+const NAV_BAR_HIDE = `nav-bar-hide`
+
+const DISPLAY_NONE = `display-none`
+function Display_change(elem) {
+    
+    elem.classList.contains(DISPLAY_NONE) ? 
+    elem.classList.remove(DISPLAY_NONE) 
+                            : 
+    elem.classList.add(DISPLAY_NONE)
+}
+
+const OVERFLOW_HIDDEN = `overflow-hidden`
+function Overflow_hidden_change() {
+    
+    const main = document.documentElement;
+    main.classList.contains(OVERFLOW_HIDDEN) ? 
+    main.classList.remove(OVERFLOW_HIDDEN) 
+                            : 
+    main.classList.add(OVERFLOW_HIDDEN)
+}
 
 icon.addEventListener("click", () => {
 
@@ -15,34 +34,36 @@ icon.addEventListener("click", () => {
             ul.style.display = "flex";
         }
 
-        if (getComputedStyle(navBar).left == `-${window.innerHeight}px`) {
+        if (getComputedStyle(navBar).left == `-10000px`) {
 
-            navBar.style.left = "0px";
+            navBar.style.left = "0px"
+            Overflow_hidden_change()
         }
         else {
 
-            navBar.style.left = `-${window.innerHeight}px`;
+            navBar.style.left = `-10000px`
+            Overflow_hidden_change()
         }
     }
     else {
 
         if (!navBar.classList.contains(NAV_BAR_HIDE)) {
 
-            navBar.classList.add(NAV_BAR_HIDE);
-            ul.style.opacity = 0;
+            navBar.classList.add(NAV_BAR_HIDE)
+            ul.style.opacity = 0
         }
         else {
-            ul.style.display = "flex";
-            ul.style.opacity = 0;
+            ul.style.display = "flex"
+            ul.style.opacity = 0
             navBar.classList.remove(NAV_BAR_HIDE);
     
             window.setTimeout(() => {
     
-                ul.style.opacity = 1;
-            }, 1500);
+                ul.style.opacity = 1
+            }, 1500)
         }
     }
-});
+})
 
 ul.addEventListener("transitionend", () => {
         
@@ -61,9 +82,9 @@ ul.addEventListener("transitionend", () => {
             ul.style.display = "none";
         }
     }
-});
+})
 
-var map;
+var map
 
 const marksArr = [
     [52.387, 31.023],
@@ -113,7 +134,7 @@ window.addEventListener("load", () => {
             map.setCenter(marksArr[index]);
         });
     });
-});
+})
 
 
 
@@ -507,11 +528,72 @@ window.addEventListener("scroll", () => {
 /* пролистывание на кнопки в слайдере начало*/
 
 const btns = document.querySelectorAll("#mySlider .item > a")
-console.log(btns)
 
 btns[0].addEventListener("click", () => {
 
-    
+    if (pageYOffset + mainBlocks[5].getBoundingClientRect().top > pageYOffset) {
+
+        srcollUp = false;
+        IntervalId = Scrolling();
+    }
+
+    scrollTarget = mainBlocks[5];
+})
+
+btns[1].addEventListener("click", () => {
+
+    if (pageYOffset + mainBlocks[6].getBoundingClientRect().top > pageYOffset) {
+
+        srcollUp = false;
+        IntervalId = Scrolling();
+    }
+
+    scrollTarget = mainBlocks[6];
+})
+
+btns[2].addEventListener("click", () => {
+
+    if (pageYOffset + mainBlocks[5].getBoundingClientRect().top > pageYOffset) {
+
+        srcollUp = false;
+        IntervalId = Scrolling();
+    }
+
+    scrollTarget = mainBlocks[5];
 })
 
 /* пролистывание на кнопки в слайдере конец */
+
+
+
+
+/* открытие расписания на кнопки direction */
+
+const directBtns =  document.querySelectorAll(".direction-content > a")
+const timetable = document.getElementById("timetable")
+
+directBtns.forEach((elem) => {
+    
+    elem.addEventListener("click",() => {
+
+        Display_change(timetable)
+
+        Overflow_hidden_change()
+    })
+})
+
+const modalWindows = document.querySelectorAll(".modalWindow")
+modalWindows.forEach((elem) => {
+
+    elem.addEventListener("click", (event) => {
+
+        if (event.target == elem ||
+            event.target == elem.querySelector(".modalWindow > div")) {
+
+            Display_change(timetable)
+            Overflow_hidden_change()
+        }
+    })
+})
+
+/* открытие расписания на кнопки direction */
