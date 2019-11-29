@@ -526,14 +526,9 @@ window.addEventListener("scroll", () => {
 });
 
 
-/* пролистывание на кнопки в слайдере начало*/
+/* пролистывание до фотогалереи на кнопки в слайдере начало*/
 
 const btns = document.querySelectorAll("#mySlider .item > a")[1]
-
-// btns[0].addEventListener("click", () => {
-
-//     ScrollToBigGreenForm()
-// })
 
 btns.addEventListener("click", () => {
 
@@ -546,12 +541,7 @@ btns.addEventListener("click", () => {
     scrollTarget = mainBlocks[6];
 })
 
-// btns[2].addEventListener("click", () => {
-
-//     ScrollToBigGreenForm()
-// })
-
-/* пролистывание на кнопки в слайдере конец */
+/* пролистывание до фотогалереи на кнопки в слайдере конец */
 
 
 
@@ -605,10 +595,10 @@ modalWindows.forEach((elem) => {
 
     elem.addEventListener("click", (event) => {
 
-        if (event.target == elem ||
-            event.target == elem.querySelector(".modalWindow > div")) {
+        if (event.target == elem || 
+            event.target.classList.contains("photoSlider")) {
 
-            Display_change(timetable)
+            Display_change(elem)
             Overflow_hidden_change()
         }
     })
@@ -623,3 +613,98 @@ linkInTimetable.addEventListener("click", () => {
 })
 
 /* открытие расписания на кнопки direction */
+
+
+
+
+
+/* открытие подробной фотоглаереии на кнопки фотогалереии */
+
+const photoBtns = document.querySelectorAll(".photos-content a")
+
+photoBtns.forEach((elem, index) => {
+
+    elem.addEventListener("click", () => {
+
+        for (let i = 0; i < 4; i++) {
+            const element = document.getElementById(`photoSlider${i}`);
+            
+            if (!element.classList.contains(DISPLAY_NONE)) {
+
+                element.classList.add(DISPLAY_NONE)
+            }
+        }
+
+        document.getElementById("photoViewer").classList.remove(DISPLAY_NONE)
+        document.getElementById(`photoSlider${index}`).classList.remove(DISPLAY_NONE)
+        Overflow_hidden_change()
+    })
+})
+
+/* открытие подробной фотоглаереии на кнопки фотогалереии */
+
+
+
+
+/* слайдер фотографий */
+
+const photoSliders = document.querySelectorAll(".photoSlider")
+const CURRENT_PHOTO = `currentPhoto`
+
+photoSliders.forEach((photoSlider) => {
+
+    const smallImgs = photoSlider.querySelectorAll(".smallImgs > img")
+    const mainImg = photoSlider.querySelector(".mainImg")
+
+    function SetCurrentPhoto(smallImg) {
+        
+        smallImgs.forEach(element => {
+                
+            if (element.classList.contains(CURRENT_PHOTO)) {
+
+                element.classList.remove(CURRENT_PHOTO)
+            }
+        });
+
+        mainImg.setAttribute("src", smallImg.src)
+        smallImg.classList.add(CURRENT_PHOTO)
+    }
+
+    var currentPhotoIndex
+    function GetCurrentPhoto() {
+        
+        smallImgs.forEach((elem, index) => {
+
+            if (elem.classList.contains(CURRENT_PHOTO)) {
+
+                currentPhotoIndex = index
+            }
+        })
+    }
+
+    smallImgs.forEach((smallImg) => {
+
+        smallImg.addEventListener("click", () => {
+
+            SetCurrentPhoto(smallImg)
+        })
+    })
+
+    photoSlider.querySelector("#previousPhoto").addEventListener("click", () => {
+        
+        GetCurrentPhoto()
+
+        currentPhotoIndex == 0 ? 
+        SetCurrentPhoto(smallImgs[smallImgs.length - 1])
+                            :
+        SetCurrentPhoto(smallImgs[(currentPhotoIndex - 1) % smallImgs.length])
+    })
+
+    photoSlider.querySelector("#nextPhoto").addEventListener("click", () => {
+
+        GetCurrentPhoto()
+        SetCurrentPhoto(smallImgs[(currentPhotoIndex + 1) % smallImgs.length])
+    })
+})
+
+/* слайдер фотографий */

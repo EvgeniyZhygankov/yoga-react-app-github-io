@@ -116,15 +116,15 @@ html, body, .main {
   width: 100vw;
   z-index: 50;
   background: rgba(0, 0, 0, 0.8);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 #timetable img {
@@ -160,6 +160,89 @@ html, body, .main {
   max-width: 250px;
   width: 30%;
   height: 10%;
+}
+
+.photoSlider {
+  width: 90%;
+  height: 90%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.photoSlider > img {
+  width: 80%;
+  height: 85%;
+}
+
+.photoSlider > div {
+  height: 10%;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.photoSlider > div img {
+  height: 100%;
+  -webkit-transition: border-color 1s;
+  transition: border-color 1s;
+}
+
+.photoSlider > a {
+  height: 100%;
+  width: 10%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 3rem;
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
+}
+
+.photoSlider > a:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.photoSlider #previousPhoto {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+
+.photoSlider #nextPhoto {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+
+.currentPhoto {
+  border-bottom: 5px solid white;
 }
 
 .leaf-right, .leaf-left {

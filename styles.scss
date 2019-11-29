@@ -133,9 +133,9 @@ html, body, .main {
     width: 100vw;
     z-index: 50;
     background: rgba(black, 0.8);
+    display: flex;
     justify-content: center;
     align-items: center;
-    display: flex;
 }
 
 #timetable {
@@ -163,6 +163,64 @@ html, body, .main {
         width: 30%;
         height: 10%;
     }
+}
+
+.photoSlider {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    > img {
+        width: 80%;
+        height: 85%;
+    }
+
+    > div {
+        height: 10%;
+        width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        img {
+           height: 100%;
+           transition: border-color 1s;
+        }
+    }
+
+    > a {
+        height: 100%;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 3rem;
+        transition: background-color 1s;
+
+        &:hover {
+            background: rgba(white, 0.5);
+        }
+    }
+
+    #previousPhoto {
+        border-top-left-radius: 50px;
+        border-bottom-left-radius: 50px;
+    }
+
+    #nextPhoto {
+        border-top-right-radius: 50px;
+        border-bottom-right-radius: 50px;
+    }
+}
+
+.currentPhoto {
+    border-bottom: 5px solid white;
 }
 
 .leaf-right, .leaf-left {
