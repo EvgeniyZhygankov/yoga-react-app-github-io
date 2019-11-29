@@ -140,19 +140,15 @@ html, body, .main {
     justify-content: center;
     align-items: center;
     display: flex;
+    // padding: 5%;
 }
 
 #timetable {
 
     img {
-        border-radius: 25px;
-        // width: 100%;
-        // height: 100%;
-        // height: 50%;
-        width: 70%;
-        // max-height: 90vh;
-        // max-width: 90vw;
-        flex: 1 2 auto;
+        border-radius: 2.5%;
+        max-width: 90vw;
+        max-height: calc(90vh - 60px);
     }
 
     div {
@@ -161,18 +157,21 @@ html, body, .main {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        max-width: 90%;
-        max-height: 90%;
     }
 
     .requestBtn {
         margin-top: 20px;
         align-self: flex-end;
+        min-height: 40px;
+        min-width: 190px;
+        max-width: 250px;
+        width: 30%;
+        height: 10%;
     }
 }
 
 #adaptiveGreenForm {
-    display: none;
+
 }
 
 .leaf-right, .leaf-left {
