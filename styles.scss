@@ -129,10 +129,6 @@ html, body, .main {
 
 .modalWindow {
     position: fixed;
-    // top: 0;
-    // left: 0;
-    // bottom: 0;
-    // right: 0;
     height: 100vh;
     width: 100vw;
     z-index: 50;
@@ -140,7 +136,6 @@ html, body, .main {
     justify-content: center;
     align-items: center;
     display: flex;
-    // padding: 5%;
 }
 
 #timetable {
@@ -168,10 +163,6 @@ html, body, .main {
         width: 30%;
         height: 10%;
     }
-}
-
-#adaptiveGreenForm {
-
 }
 
 .leaf-right, .leaf-left {
@@ -1865,11 +1856,11 @@ footer {
                 font-size: 1rem;
             }
         }
-    }
 
-    .fa-bars {
-        color: $clGreen;
-        order: 2;
+        .fa-bars {
+            color: $clGreen;
+            order: 2;
+        }
     }
 
     .logo {
@@ -1884,9 +1875,10 @@ footer {
 
     .header-left-bottom {
         position: absolute;
-        top: 30px;
+        height: 100%;
         right: 50px;
-
+        align-items: center;
+        
         .media {
             width: 92px;
             height: auto;

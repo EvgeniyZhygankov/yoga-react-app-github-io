@@ -525,22 +525,17 @@ window.addEventListener("scroll", () => {
     }
 });
 
+
 /* пролистывание на кнопки в слайдере начало*/
 
-const btns = document.querySelectorAll("#mySlider .item > a")
+const btns = document.querySelectorAll("#mySlider .item > a")[1]
 
-btns[0].addEventListener("click", () => {
+// btns[0].addEventListener("click", () => {
 
-    if (pageYOffset + mainBlocks[5].getBoundingClientRect().top > pageYOffset) {
+//     ScrollToBigGreenForm()
+// })
 
-        srcollUp = false;
-        IntervalId = Scrolling();
-    }
-
-    scrollTarget = mainBlocks[5];
-})
-
-btns[1].addEventListener("click", () => {
+btns.addEventListener("click", () => {
 
     if (pageYOffset + mainBlocks[6].getBoundingClientRect().top > pageYOffset) {
 
@@ -551,18 +546,42 @@ btns[1].addEventListener("click", () => {
     scrollTarget = mainBlocks[6];
 })
 
-btns[2].addEventListener("click", () => {
+// btns[2].addEventListener("click", () => {
 
-    if (pageYOffset + mainBlocks[5].getBoundingClientRect().top > pageYOffset) {
-
-        srcollUp = false;
-        IntervalId = Scrolling();
-    }
-
-    scrollTarget = mainBlocks[5];
-})
+//     ScrollToBigGreenForm()
+// })
 
 /* пролистывание на кнопки в слайдере конец */
+
+
+
+
+/* пролистывание до большой зеленой формы */
+
+function ScrollToBigGreenForm() {
+    
+    if (pageYOffset + mainBlocks[5].getBoundingClientRect().top > pageYOffset) {
+
+        srcollUp = false
+        IntervalId = Scrolling()
+    }
+
+    scrollTarget = mainBlocks[5]
+}
+
+const requestCallBtns = document.querySelectorAll("a.requestCall")
+
+requestCallBtns.forEach((elem) => {
+    
+    elem.addEventListener("click", () => {
+
+        ScrollToBigGreenForm()
+    })
+})
+
+/* пролистывание до большой зеленой формы */
+
+
 
 
 
@@ -577,7 +596,6 @@ directBtns.forEach((elem) => {
     elem.addEventListener("click",() => {
 
         Display_change(timetable)
-
         Overflow_hidden_change()
     })
 })
@@ -594,6 +612,14 @@ modalWindows.forEach((elem) => {
             Overflow_hidden_change()
         }
     })
+})
+
+const linkInTimetable = timetable.querySelector("a")
+
+linkInTimetable.addEventListener("click", () => {
+
+    Display_change(timetable)
+    Overflow_hidden_change()
 })
 
 /* открытие расписания на кнопки direction */

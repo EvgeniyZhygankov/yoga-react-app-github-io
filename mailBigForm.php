@@ -10,18 +10,20 @@ $headers  = 'MIME-Version: 1.0' . "\r\n"; // заголовок соответс
 $headers .= 'Content-type: text/html; charset=utf-8' . "\r\n"; // указывает на тип посылаемого контента
  //отправляет получателю на емайл значения переменных
 
- mail($to, $tema, $message, $headers)
- header('Refresh: 5; URL=http://shangriyoga.by/');
- echo 'Письмо отправлено';
+ 
 
  if ($agree)
 {
     
+    mail($to, $tema, $message, $headers)
+    header('Refresh: 5; URL=http://shangriyoga.by/');
+    echo 'Письмо отправлено';
+
     // if (empty($bezspama)) /* Оценка поля bezspama - должно быть пустым*/
     // {
     //     /* Отправляем сообщение, используя mail() функцию */
     //     $from  = "From: $name <$email> \r\n Reply-To: $email \r\n";
-    //     if () {
+    //     if (mail($to, $tema, $message, $headers)) {
     //         header('Refresh: 5; URL=http://shangriyoga.by/');
     //         echo 'Письмо отправлено';}
     //     else {
