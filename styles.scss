@@ -134,6 +134,7 @@ html, body, .main {
     z-index: 50;
     background: rgba(black, 0.8);
     display: flex;
+    flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
 }
@@ -142,17 +143,23 @@ html, body, .main {
 
     img {
         border-radius: 2.5%;
-        max-width: 90vw;
+        max-width: 80vw;
         max-height: calc(90vh - 60px);
     }
 
     div {
         display: flex;
         flex-wrap: nowrap;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+
+        div {
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            flex: 1 2 auto;
+        }
+    }    
 
     .requestBtn {
         margin-top: 20px;
@@ -165,6 +172,14 @@ html, body, .main {
     }
 }
 
+#photoViewer {
+
+    .fa-window-close {
+        position: relative;
+        top: 5%;
+    }
+}
+
 .photoSlider {
     width: 90%;
     height: 90%;
@@ -172,7 +187,7 @@ html, body, .main {
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
     position: relative;
 
     > img {
@@ -180,7 +195,7 @@ html, body, .main {
         height: 85%;
     }
 
-    > div {
+    > div:not(.close-content) {
         height: 10%;
         width: 80%;
         display: flex;
@@ -217,6 +232,19 @@ html, body, .main {
         border-top-right-radius: 50px;
         border-bottom-right-radius: 50px;
     }
+}
+
+.close-content {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.fa-window-close {
+    color: white;
+    font-size: 2rem;
+    align-self: flex-start;
+    margin-left: 10px;
 }
 
 .currentPhoto {

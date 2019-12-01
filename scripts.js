@@ -321,7 +321,9 @@ uls.forEach((UL) => {
             }
             scrollTarget = targetBlocks[indexLI];
 
-            icon.click()
+            if (window.innerWidth < 992) {
+                icon.click()
+            }
         });
     });
 });
@@ -593,6 +595,14 @@ directBtns.forEach((elem) => {
 const modalWindows = document.querySelectorAll(".modalWindow")
 modalWindows.forEach((elem) => {
 
+    const closeBtns = elem.querySelector("i.far.fa-window-close")
+
+    closeBtns.addEventListener("click", () => {
+        
+        Display_change(elem)
+        Overflow_hidden_change()
+    })
+
     elem.addEventListener("click", (event) => {
 
         if (event.target == elem || 
@@ -708,3 +718,18 @@ photoSliders.forEach((photoSlider) => {
 })
 
 /* слайдер фотографий */
+
+
+function beforeSubmit(form) {
+    
+    const agree = form.querySelector("input[name=agree]")
+
+    if (agree.checked) {
+
+        form.submit()
+    }
+    else {
+
+        alert("Мы не можем отправить Ваше сообщение, так как вы не подтвердили, что Вы ознакомлены и согласны с политикой конфиденциальности данного сайта")
+    }
+}

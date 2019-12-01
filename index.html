@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: http://ogp.me/ns#">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Shangriyoga</title>
+
+    <meta property="og:title" content="Shangriyoga" />
+    <meta property="og:url" content="http://shangriyoga.by/" />
+    <meta property="og:image" content="http://shangriyoga.by/images/back-header-women.jpg" />
+    
     <link rel="stylesheet" 
         href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
@@ -13,87 +18,95 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="./font-awesome/css/all.min.css">
     <script src="https://api-maps.yandex.ru/2.1/?apikey=60ce6059-3e7e-4d62-8297-ec6277db4a9d&lang=ru_RU" type="text/javascript"></script>
-    
 </head>
 
 <body>
 
     <div id="timetable" class="modalWindow display-none">
+        
         <div>
-            <img src="./images/shablon_grafika.png">
-            <a class="requestBtn requestCall">ОТПРАВИТЬ ЗАЯВКУ</a>
-        </div>
+            <div>
+                <img src="./images/shablon_grafika.png">
+                <a class="requestBtn requestCall">ОТПРАВИТЬ ЗАЯВКУ</a>
+            </div>
+
+            <i class="far fa-window-close"></i>
+        </div>     
+
+        
     </div>
 
     <div id="photoViewer" class="modalWindow display-none">
 
-            <div id="photoSlider0" class="photoSlider display-none">
-                
-                <a id="previousPhoto"><i class="fas fa-angle-left"></i></a>
-                
-                <img class="mainImg" src="images/photogallery/photo1.jpg">
+        <div id="photoSlider0" class="photoSlider display-none">
+            
+            <a id="previousPhoto"><i class="fas fa-angle-left"></i></a>
 
-                <div class="smallImgs">
-                    <img src="./images/photogallery/photo1.jpg" class="currentPhoto">
-                    <img src="./images/photogallery/photo2.jpg">
-                    <img src="./images/photogallery/photo3.jpg">
-                    <img src="./images/photogallery/photo4.jpg">
-                    <img src="./images/photogallery/photo5.jpg">
-                </div>
-                
-                <a id="nextPhoto"><i class="fas fa-angle-right"></i></a>
+            <img class="mainImg" src="images/photogallery/photo1.jpg">
+
+            <div class="smallImgs">
+                <img src="./images/photogallery/photo1.jpg" class="currentPhoto">
+                <img src="./images/photogallery/photo2.jpg">
+                <img src="./images/photogallery/photo3.jpg">
+                <img src="./images/photogallery/photo4.jpg">
+                <img src="./images/photogallery/photo5.jpg">
             </div>
+            
+            <a id="nextPhoto"><i class="fas fa-angle-right"></i></a>
+        </div>
 
-            <div id="photoSlider1" class="photoSlider display-none">
-                
-                <a id="previousPhoto"><i class="fas fa-angle-left"></i></a>
+        <div id="photoSlider1" class="photoSlider display-none">
+            
+            <a id="previousPhoto"><i class="fas fa-angle-left"></i></a>
 
-                <img class="mainImg" src="images/photogallery/photo1.jpg">
+            <img class="mainImg" src="images/photogallery/photo1.jpg">
 
-                <div class="smallImgs">
-                    <img src="./images/photogallery/photo1.jpg" class="currentPhoto">
-                    <img src="./images/photogallery/photo2.jpg">
-                    <img src="./images/photogallery/photo3.jpg">
-                    <img src="./images/photogallery/photo4.jpg">
-                    <img src="./images/photogallery/photo5.jpg">
-                </div>
-                
-                <a id="nextPhoto"><i class="fas fa-angle-right"></i></a>
+            <div class="smallImgs">
+                <img src="./images/photogallery/photo1.jpg" class="currentPhoto">
+                <img src="./images/photogallery/photo2.jpg">
+                <img src="./images/photogallery/photo3.jpg">
+                <img src="./images/photogallery/photo4.jpg">
+                <img src="./images/photogallery/photo5.jpg">
             </div>
+            
+            <a id="nextPhoto"><i class="fas fa-angle-right"></i></a>
+        </div>
 
-            <div id="photoSlider2" class="photoSlider display-none">
-                
-                <a id="previousPhoto"><i class="fas fa-angle-left"></i></a>
-                
-                <img class="mainImg" src="images/photogallery/photo1.jpg">
+        <div id="photoSlider2" class="photoSlider display-none">
+            
+            <a id="previousPhoto"><i class="fas fa-angle-left"></i></a>
+            
+            <img class="mainImg" src="images/photogallery/photo1.jpg">
 
-                <div class="smallImgs">
-                    <img src="./images/photogallery/photo1.jpg" class="currentPhoto">
-                    <img src="./images/photogallery/photo2.jpg">
-                    <img src="./images/photogallery/photo3.jpg">
-                    <img src="./images/photogallery/photo4.jpg">
-                    <img src="./images/photogallery/photo5.jpg">
-                </div>
-                
-                <a id="nextPhoto"><i class="fas fa-angle-right"></i></a>
+            <div class="smallImgs">
+                <img src="./images/photogallery/photo1.jpg" class="currentPhoto">
+                <img src="./images/photogallery/photo2.jpg">
+                <img src="./images/photogallery/photo3.jpg">
+                <img src="./images/photogallery/photo4.jpg">
+                <img src="./images/photogallery/photo5.jpg">
             </div>
+            
+            <a id="nextPhoto"><i class="fas fa-angle-right"></i></a>
+        </div>
 
-            <div id="photoSlider3" class="photoSlider display-none">
-                
-                <a id="previousPhoto"><i class="fas fa-angle-left"></i></a>
+        <div id="photoSlider3" class="photoSlider display-none">
+            
+            <a id="previousPhoto"><i class="fas fa-angle-left"></i></a>
 
-                <img class="mainImg" src="images/photogallery/photo1.jpg">
+            <img class="mainImg" src="images/photogallery/photo1.jpg">
 
-                <div class="smallImgs">
-                    <img src="./images/photogallery/photo1.jpg" class="currentPhoto">
-                    <img src="./images/photogallery/photo2.jpg">
-                    <img src="./images/photogallery/photo3.jpg">
-                    <img src="./images/photogallery/photo4.jpg">
-                    <img src="./images/photogallery/photo5.jpg">
-                </div>
-                
-                <a id="nextPhoto"><i class="fas fa-angle-right"></i></a>
+            <div class="smallImgs">
+                <img src="./images/photogallery/photo1.jpg" class="currentPhoto">
+                <img src="./images/photogallery/photo2.jpg">
+                <img src="./images/photogallery/photo3.jpg">
+                <img src="./images/photogallery/photo4.jpg">
+                <img src="./images/photogallery/photo5.jpg">
             </div>
+            
+            <a id="nextPhoto"><i class="fas fa-angle-right"></i></a>
+        </div>        
+
+        <i class="far fa-window-close"></i>
     </div>
 
     <div class="main">
@@ -221,10 +234,10 @@
                                     </div>
                                     <img src="./images/logo-form-bottom.png">
                                 </div>
-                                <form class="green-form-content-bottom" action="./mail.php" method="POST">
-                                    <input type="text" placeholder="Ваше имя" id="uname">
-                                    <input type="text" placeholder="Введите телефон" id="unumber">
-                                    <input class="requestBtn" type="submit" value="ОТПРАВИТЬ ЗАЯВКУ">
+                                <form class="green-form-content-bottom" action="mail.php" method="POST">
+                                    <input type="text" placeholder="Ваше имя" name="name">
+                                    <input type="text" placeholder="Введите телефон" name="tel">
+                                    <input class="requestBtn" type="submit" value="ОТПРАВИТЬ ЗАЯВКУ" name="submit">
                                 </form>
                             </div>
                         </div>
@@ -517,8 +530,9 @@
                             ориентировочное время в промежутке – с 12:00 до 19:30 с перерывами на обед и отдых.
                             Расписание будет составлено на весь курс заранее, с возможностью корректировки по
                             просьбам студентов или на усмотрение учителя.
-                        </p>
-                        <p>
+                        <!-- </p>
+                        <p> -->
+                            <br><br><br><br>
                             <span class="black-bold-italic">
                                 Место проведения
                                 занятий:
@@ -529,7 +543,7 @@
                             Куратор курса инструктор по йоге
                             Полина 8 (044)7432431
                         </p>
-                        <a class="vk-feedback">
+                        <a class="vk-feedback" href="https://vk.com/topic-185979329_40000703">
                             <img src="./images/vk-directions.png">
                             <p>Наши отзывы</p>
                         </a>
@@ -866,13 +880,13 @@
                                 <i class="fab fa-vk"></i>
                                 <i class="fab fa-facebook-square"></i>
                             </div>
-                            <form method="POST" action="./mailBigForm.php">
+                            <form method="post" action="mail2.php" onsubmit="beforeSubmit(this);return false;">
                                 <input type="text" placeholder="ВАШЕ ИМЯ" name="name">
-                                <input type="text" placeholder="ВАШ ТЕЛЕФОН" name="phone">
+                                <input type="text" placeholder="ВАШ ТЕЛЕФОН" name="tel">
                                 <input type="text" placeholder="УКАЖИТЕ ВАШ ВОЗРАСТ" name="age">
-                                <textarea placeholder="ВАШ ВОПРОС" name="message"></textarea>
+                                <textarea placeholder="ВАШ ВОПРОС" name="mail_msg"></textarea>
                                 <div>
-                                    <input type="submit" value="ОТПРАВИТЬ">
+                                    <input type="submit" value="ОТПРАВИТЬ" name="submit">
                                     <p>
                                         <input type="checkbox" name="agree">Отправляя сообщение, я принимаю пользовательское
                                         соглашение и подтверждаю, что ознакомлен и согласен с политикой
@@ -1038,6 +1052,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
+    
 </body>
 
 </html>
