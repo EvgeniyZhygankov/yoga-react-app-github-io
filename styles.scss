@@ -174,15 +174,20 @@ html, body, .main {
 
 #photoViewer {
 
-    .fa-window-close {
-        position: relative;
-        top: 5%;
+    > div {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+
+        .fa-window-close {
+            margin-top: -3px;
+        }
     }
 }
 
 .photoSlider {
-    width: 90%;
-    height: 90%;
+    max-width: 98%;
+    max-height: 98%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -190,47 +195,69 @@ html, body, .main {
     align-items: flex-end;
     position: relative;
 
-    > img {
-        height: 85%;
-        align-self: center
+    &:hover {
+
+        > a, > div {
+            opacity: 1;
+        }
     }
 
-    > div:not(.close-content) {
+    > img {
+        height: 100%;
+        align-self: center;
+    }
+
+    > div {
         height: 10%;
-        width: 80%;
+        width: 100%;
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         justify-content: space-between;
         align-items: center;
+        transition: opacity 0.5s;
+        opacity: 0;
+        position: absolute;
+        bottom: 0;
+        background: rgba(black, 0.8);
+        overflow: auto;
 
         img {
-           height: 100%;
-           transition: border-color 1s;
+            height: 70%;
+            transition: border-color 1s;
+            margin: 0 5px;
         }
     }
 
     > a {
-        height: 100%;
-        width: 10%;
+        height: 90%;
+        width: auto;
+        margin: auto 0;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 3rem;
-        transition: background-color 1s;
+        transition: background-color 1s, opacity 0.5s;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        color: rgba(white, 0.7) !important;
+        margin: 0 10px;
 
         &:hover {
-            background: rgba(white, 0.5);
+            color: rgba(white, 1) !important;
         }
     }
 
     #previousPhoto {
         border-top-left-radius: 50px;
         border-bottom-left-radius: 50px;
+        left: 0;
     }
 
     #nextPhoto {
         border-top-right-radius: 50px;
         border-bottom-right-radius: 50px;
+        right: 0;
     }
 }
 
@@ -1824,6 +1851,24 @@ footer {
     .main {
         background-size: auto auto;
         background-position: top right;
+    }
+
+    #photoViewer {
+
+        > div {
+            width: 98%;
+            height: 98%;
+        }
+    }
+
+    .photoSlider {
+        height: 100%;
+        width: 100%;
+
+        > img {
+            height: 100%;
+            width: 100%;
+        }
     }
 
     section {

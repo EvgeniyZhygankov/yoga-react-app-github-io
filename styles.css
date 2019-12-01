@@ -175,14 +175,25 @@ html, body, .main {
   height: 10%;
 }
 
-#photoViewer .fa-window-close {
-  position: relative;
-  top: 5%;
+#photoViewer > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+#photoViewer > div .fa-window-close {
+  margin-top: -3px;
 }
 
 .photoSlider {
-  width: 90%;
-  height: 90%;
+  max-width: 98%;
+  max-height: 98%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -201,38 +212,51 @@ html, body, .main {
   position: relative;
 }
 
+.photoSlider:hover > a, .photoSlider:hover > div {
+  opacity: 1;
+}
+
 .photoSlider > img {
-  height: 85%;
+  height: 100%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
 }
 
-.photoSlider > div:not(.close-content) {
+.photoSlider > div {
   height: 10%;
-  width: 80%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+  opacity: 0;
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  overflow: auto;
 }
 
-.photoSlider > div:not(.close-content) img {
-  height: 100%;
+.photoSlider > div img {
+  height: 70%;
   -webkit-transition: border-color 1s;
   transition: border-color 1s;
+  margin: 0 5px;
 }
 
 .photoSlider > a {
-  height: 100%;
-  width: 10%;
+  height: 90%;
+  width: auto;
+  margin: auto 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -243,22 +267,29 @@ html, body, .main {
       -ms-flex-align: center;
           align-items: center;
   font-size: 3rem;
-  -webkit-transition: background-color 1s;
-  transition: background-color 1s;
+  -webkit-transition: background-color 1s, opacity 0.5s;
+  transition: background-color 1s, opacity 0.5s;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  color: rgba(255, 255, 255, 0.7) !important;
+  margin: 0 10px;
 }
 
 .photoSlider > a:hover {
-  background: rgba(255, 255, 255, 0.5);
+  color: white !important;
 }
 
 .photoSlider #previousPhoto {
   border-top-left-radius: 50px;
   border-bottom-left-radius: 50px;
+  left: 0;
 }
 
 .photoSlider #nextPhoto {
   border-top-right-radius: 50px;
   border-bottom-right-radius: 50px;
+  right: 0;
 }
 
 .fa-window-close {
@@ -2385,6 +2416,18 @@ footer {
   .main {
     background-size: auto auto;
     background-position: top right;
+  }
+  #photoViewer > div {
+    width: 98%;
+    height: 98%;
+  }
+  .photoSlider {
+    height: 100%;
+    width: 100%;
+  }
+  .photoSlider > img {
+    height: 100%;
+    width: 100%;
   }
   section {
     margin: 0;
