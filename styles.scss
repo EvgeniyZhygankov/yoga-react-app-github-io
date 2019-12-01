@@ -191,8 +191,8 @@ html, body, .main {
     position: relative;
 
     > img {
-        width: 80%;
         height: 85%;
+        align-self: center
     }
 
     > div:not(.close-content) {
@@ -234,17 +234,15 @@ html, body, .main {
     }
 }
 
-.close-content {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-
 .fa-window-close {
     color: white;
     font-size: 2rem;
     align-self: flex-start;
     margin-left: 10px;
+
+    &:hover {
+        color: rgba(white, 0.5);
+    }
 }
 
 .currentPhoto {
