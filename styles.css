@@ -187,13 +187,9 @@ html, body, .main {
           align-items: flex-start;
 }
 
-#photoViewer > div .fa-window-close {
-  margin-top: -3px;
-}
-
 .photoSlider {
-  max-width: 98%;
-  max-height: 98%;
+  max-width: 96vw;
+  max-height: 96vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -217,10 +213,12 @@ html, body, .main {
 }
 
 .photoSlider > img {
+  max-height: 96vh;
   height: 100%;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  margin: auto auto;
 }
 
 .photoSlider > div {
@@ -2425,10 +2423,30 @@ footer {
     height: 100%;
     width: 100%;
   }
+}
+
+@media (max-width: 992px) and (orientation: portrait) {
+  #photoViewer > div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    height: auto;
+  }
+  #photoViewer > div .fa-window-close {
+    -ms-flex-item-align: end;
+        align-self: flex-end;
+    margin: 10px 10px;
+  }
   .photoSlider > img {
-    height: 100%;
+    height: auto;
     width: 100%;
   }
+}
+
+@media (max-width: 992px) {
   section {
     margin: 0;
   }
